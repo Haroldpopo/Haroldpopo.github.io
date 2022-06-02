@@ -1,0 +1,679 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Harold" href="https://harold_popo.gitee.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Harold" href="https://harold_popo.gitee.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Harold" href="https://harold_popo.gitee.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://harold_popo.gitee.io/notepad-program/">
+
+
+
+  <title>
+C#编写一个较完整的记事本程序 |
+Harold's Blog = Harold = Study Notes</title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">C#编写一个较完整的记事本程序
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2020-02-17 18:41:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-02-17T18:41:00+08:00">2020-02-17</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>8.7k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>8 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Harold's Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciukx8a7j20zk0m8aio.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclj9410cj20zk0m8h12.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="https://harold_popo.gitee.io/notepad-program/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Harold">
+    <meta itemprop="description" content="Study Notes, 我踏清风寻杨柳，谁有龙虾谁有酒。清风深知杨柳意，啤酒龙虾又相聚。">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Harold">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <div class="note primary">
+<p>本文章在我的 CSDN 和博客园账号都有发布，这里做了一点修改，完整代码请下载项目源码查阅或移步至博客园中阅读，附博客园本文地址：<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vSGFyb2xkLXBvcG8vcC8xMjQzNjY4Mi5odG1s">https://www.cnblogs.com/Harold-popo/p/12436682.html</span></p>
+<p>CSDN 博客账号已不更新，这里也附上地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VGT19IYXJvbGQvYXJ0aWNsZS9kZXRhaWxzLzEwNDM0OTY2Mw==">https://blog.csdn.net/UFO_Harold/article/details/104349663</span></p>
+</div>
+<h1 id="开发环境"><a class="anchor" href="#开发环境">#</a> 开发环境</h1>
+<p>Visual Studio 2019</p>
+<ul>
+<li>至少需安装 <strong>.NET 桌面开发</strong></li>
+</ul>
+<p><img data-src="https://img-blog.csdnimg.cn/20200228133154627.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VGT19IYXJvbGQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<h1 id="创建项目并配置"><a class="anchor" href="#创建项目并配置">#</a> 创建项目并配置</h1>
+<h2 id="创建窗体文件"><a class="anchor" href="#创建窗体文件">#</a> 创建窗体文件</h2>
+<p><img data-src="https://img-blog.csdnimg.cn/20200228133341997.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VGT19IYXJvbGQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<h2 id="配置项目名称及框架"><a class="anchor" href="#配置项目名称及框架">#</a> 配置项目名称及框架</h2>
+<p><img data-src="https://img-blog.csdnimg.cn/20200228133429889.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VGT19IYXJvbGQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<h2 id="设计界面"><a class="anchor" href="#设计界面">#</a> 设计界面</h2>
+<p>创建窗体文件，将控件摆放位置如下，参考系统自带的记事本程序<br />
+<img data-src="https://img-blog.csdnimg.cn/20200217141620298.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VGT19IYXJvbGQ=,size_16,color_FFFFFF,t_70" alt="窗体控件分布" /></p>
+<h2 id="窗体添加的控件和组件如下"><a class="anchor" href="#窗体添加的控件和组件如下">#</a> 窗体添加的控件和组件如下</h2>
+<ul>
+<li>控件及组件在工具箱查找</li>
+</ul>
+<p><img data-src="https://img-blog.csdnimg.cn/20200216215506680.png" alt="窗体所需添加的控件和组件" /></p>
+<h2 id="窗体属性"><a class="anchor" href="#窗体属性">#</a> 窗体属性</h2>
+<p><img data-src="https://img-blog.csdnimg.cn/20200217133721429.png" alt="窗体属性" /></p>
+<h2 id="快捷键设置"><a class="anchor" href="#快捷键设置">#</a> 快捷键设置</h2>
+<ul>
+<li>杂项 --&gt; ShortcutKeys</li>
+</ul>
+<p><img data-src="https://img-blog.csdnimg.cn/20200217143656219.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VGT19IYXJvbGQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<h2 id="程序属性"><a class="anchor" href="#程序属性">#</a> 程序属性</h2>
+<p>项目属性如下图，在创建项目时就已定好了框架，如果在另一台主机上的框架版本比目前项目框架版本低的话，则运行不起来</p>
+<ul>
+<li>文章末尾有整个程序的压缩包链接可下载，如需直接运行则需下载对应的 <code>.NET Framework 4.7.2</code>  框架</li>
+</ul>
+<p><img data-src="https://img-blog.csdnimg.cn/20200217140540435.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VGT19IYXJvbGQ=,size_16,color_FFFFFF,t_70" alt="项目属性" /></p>
+<p>程序图标可在此设置，生成程序后的图标如下图，此文件夹下的程序文件可在第二台主机上直接运行（项目 \bin\Debug 目录下就是生成程序文件的存放位置，双击程序文件即可运行）</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200217141129759.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VGT19IYXJvbGQ=,size_16,color_FFFFFF,t_70" alt="项目生成文件的路径" /></p>
+<h1 id="代码演示"><a class="anchor" href="#代码演示">#</a> 代码演示</h1>
+<h2 id="引用的命名空间"><a class="anchor" href="#引用的命名空间">#</a> 引用的命名空间</h2>
+<div class="note warning">
+<p>注释部分需自行添加</p>
+</div>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>命名空间的引用</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>ComponentModel</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Data</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Drawing</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>IO</span><span class="token punctuation">;</span> <span class="token comment">// 提供了关于文件、数据流的读取和写入操作</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Linq</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Text</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Threading<span class="token punctuation">.</span>Tasks</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Windows<span class="token punctuation">.</span>Forms</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>Diagnostics</span><span class="token punctuation">;</span> <span class="token comment">// 提供了用于与事件日志、性能计数器和系统进程进行交互的类</span></pre></td></tr></table></figure><h2 id="主要功能"><a class="anchor" href="#主要功能">#</a> 主要功能</h2>
+<h3 id="新建文件"><a class="anchor" href="#新建文件">#</a> 新建文件</h3>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>新建文件</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token keyword">void</span> 新建<span class="token function">NToolStripMenuItem_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>txtBox<span class="token punctuation">.</span>Modified <span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token class-name">DialogResult</span> dr <span class="token operator">=</span> MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token string">"文件发生变化，是否更改保存？"</span><span class="token punctuation">,</span> <span class="token string">"注意"</span><span class="token punctuation">,</span> MessageBoxButtons<span class="token punctuation">.</span>YesNoCancel<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        </pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token keyword">if</span> <span class="token punctuation">(</span>dr <span class="token operator">==</span> DialogResult<span class="token punctuation">.</span>Yes<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>            保存<span class="token function">SToolStripMenuItem_Click</span><span class="token punctuation">(</span>sender<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>            <span class="token keyword">return</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>dr <span class="token operator">==</span> DialogResult<span class="token punctuation">.</span>Cancel<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>            <span class="token keyword">return</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        </pre></td></tr><tr><td data-num="12"></td><td><pre>        txtBox<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token keyword">this</span><span class="token punctuation">.</span>Text <span class="token operator">=</span> <span class="token string">"NewNotepad"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>        txtBox<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>        <span class="token keyword">this</span><span class="token punctuation">.</span>Text <span class="token operator">=</span> <span class="token string">"NewNotepad"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="打开"><a class="anchor" href="#打开">#</a> 打开</h3>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>打开</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token keyword">void</span> 打开<span class="token function">ToolStripMenuItem_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>openFileDialog<span class="token punctuation">.</span><span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> DialogResult<span class="token punctuation">.</span>OK<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        filename <span class="token operator">=</span> openFileDialog<span class="token punctuation">.</span>FileName<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token function">OpenFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">protected</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OpenFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        txtBox<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        txtBox<span class="token punctuation">.</span>Text <span class="token operator">=</span> File<span class="token punctuation">.</span><span class="token function">ReadAllText</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token string">"Error!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="保存"><a class="anchor" href="#保存">#</a> 保存</h3>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>保存</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token keyword">void</span> 保存<span class="token function">SToolStripMenuItem_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token class-name">StreamWriter</span> sw <span class="token operator">=</span> File<span class="token punctuation">.</span><span class="token function">AppendText</span><span class="token punctuation">(</span>Application<span class="token punctuation">.</span>ExecutablePath<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        sw<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>txtBox<span class="token punctuation">.</span>Text<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        sw<span class="token punctuation">.</span><span class="token function">Dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token class-name">SaveFileDialog</span> sf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">SaveFileDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        sf<span class="token punctuation">.</span>DefaultExt <span class="token operator">=</span> <span class="token string">"*.txt"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        sf<span class="token punctuation">.</span>Filter <span class="token operator">=</span> <span class="token string">"文本文档(.txt)|*.txt"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token keyword">if</span> <span class="token punctuation">(</span>sf<span class="token punctuation">.</span><span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> DialogResult<span class="token punctuation">.</span>OK<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>            <span class="token class-name">StreamWriter</span> sw <span class="token operator">=</span> File<span class="token punctuation">.</span><span class="token function">AppendText</span><span class="token punctuation">(</span>sf<span class="token punctuation">.</span>FileName<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>            sw<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>txtBox<span class="token punctuation">.</span>Text<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>            sw<span class="token punctuation">.</span><span class="token function">Dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="另存为"><a class="anchor" href="#另存为">#</a> 另存为</h3>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>另存为</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token keyword">void</span> 另存为<span class="token function">ToolStripMenuItem_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token class-name"><span class="token keyword">string</span></span> name<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token comment">// SaveFileDialog 类</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token class-name">SaveFileDialog</span> save <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">SaveFileDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token comment">// 过滤器</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    save<span class="token punctuation">.</span>Filter <span class="token operator">=</span> <span class="token string">"*.txt|*.TXT|(*.*)|*.*"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token comment">// 显示</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>save<span class="token punctuation">.</span><span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> DialogResult<span class="token punctuation">.</span>OK<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        name <span class="token operator">=</span> save<span class="token punctuation">.</span>FileName<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token class-name">FileInfo</span> info <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">FileInfo</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token comment">// info.Delete();</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token class-name">StreamWriter</span> writer <span class="token operator">=</span> info<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        writer<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>txtBox<span class="token punctuation">.</span>Text<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        writer<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="打印"><a class="anchor" href="#打印">#</a> 打印</h3>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>打印</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token keyword">void</span> 打印<span class="token function">PToolStripMenuItem_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token comment">// 显示允许用户选择打印机的选项及其它打印选项的对话框</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">this</span><span class="token punctuation">.</span>printDialog<span class="token punctuation">.</span>Document <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>printDocument<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">this</span><span class="token punctuation">.</span>printDialog<span class="token punctuation">.</span>PrinterSettings <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>pageSetupDialog<span class="token punctuation">.</span>PrinterSettings<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token comment">// 向打印机发送打印指令</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>printDialog<span class="token punctuation">.</span><span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> DialogResult<span class="token punctuation">.</span>OK<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>            <span class="token keyword">this</span><span class="token punctuation">.</span>printDocument<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>            MessageBox<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span>ex<span class="token punctuation">.</span>Message<span class="token punctuation">,</span> <span class="token string">"错误信息！"</span><span class="token punctuation">,</span> MessageBoxButtons<span class="token punctuation">.</span>OK<span class="token punctuation">,</span> MessageBoxIcon<span class="token punctuation">.</span>Error<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="编辑"><a class="anchor" href="#编辑">#</a> 编辑</h3>
+<div class="note default">
+<p>根据 是否输入内容 控制 是否启用功能</p>
+</div>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>编辑</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token keyword">void</span> 编辑<span class="token function">ToolStripMenuItem_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    剪切ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> txtBox<span class="token punctuation">.</span>Modified<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>txtBox<span class="token punctuation">.</span>SelectedText <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        剪切ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        复制ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        删除ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        剪切ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        复制ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        删除ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>txtBox<span class="token punctuation">.</span>Text <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        查找ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        查找下一个ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>        查找上一个ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>        替换ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>        查找ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>        查找下一个ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>        查找上一个ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>        替换ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="22"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>Clipboard<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="24"></td><td><pre>        粘贴ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="25"></td><td><pre>    <span class="token keyword">else</span></pre></td></tr><tr><td data-num="26"></td><td><pre>        粘贴ToolStripMenuItem<span class="token punctuation">.</span>Enabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="27"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="查找"><a class="anchor" href="#查找">#</a> 查找</h3>
+<div class="note warning">
+<p>查找功能不够完善，混用查找上一项和查找下一项效果不理想</p>
+</div>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>查找</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token keyword">void</span> 查找<span class="token function">ToolStripMenuItem_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token comment">// 显示查找对话框</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    txtInput<span class="token punctuation">.</span>Size <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Size</span><span class="token punctuation">(</span><span class="token number">190</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    txtInput<span class="token punctuation">.</span>Location <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Point</span><span class="token punctuation">(</span><span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    txtInput<span class="token punctuation">.</span>Multiline <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>    FindNext<span class="token punctuation">.</span>Click <span class="token operator">+=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">EventHandler</span><span class="token punctuation">(</span>Direction_Click<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token comment">//FindNext.Click += new EventHandler(Visible_Click);</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre>    Cancel<span class="token punctuation">.</span>Click <span class="token operator">+=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">EventHandler</span><span class="token punctuation">(</span>Cancel_Click<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre>    FindForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lblSearch<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    FindForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lblDirection<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    FindForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>txtInput<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    FindForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>down<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    FindForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>upward<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    FindForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>FindNext<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>    FindForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>Cancel<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>    FindForm<span class="token punctuation">.</span>Top <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Top <span class="token operator">+</span> <span class="token number">50</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    FindForm<span class="token punctuation">.</span>Left <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Left <span class="token operator">+</span> <span class="token number">50</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>    FindForm<span class="token punctuation">.</span>Height <span class="token operator">=</span> <span class="token number">120</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="22"></td><td><pre>    FindForm<span class="token punctuation">.</span>Width <span class="token operator">=</span> <span class="token number">380</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>    FindForm<span class="token punctuation">.</span>StartPosition <span class="token operator">=</span> FormStartPosition<span class="token punctuation">.</span>CenterParent<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="24"></td><td><pre>    FindForm<span class="token punctuation">.</span><span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="25"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="26"></td><td><pre></pre></td></tr><tr><td data-num="27"></td><td><pre><span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Cancel_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>    <span class="token comment">// 关闭对话框</span></pre></td></tr><tr><td data-num="29"></td><td><pre>    FindForm<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="30"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="31"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="32"></td><td><pre></pre></td></tr><tr><td data-num="33"></td><td><pre><span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Direction_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="34"></td><td><pre>    <span class="token comment">// 选择字符查找方向</span></pre></td></tr><tr><td data-num="35"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>down<span class="token punctuation">.</span>Checked <span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="36"></td><td><pre>        <span class="token function">Find_Click</span><span class="token punctuation">(</span>sender<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="37"></td><td><pre>    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>upward<span class="token punctuation">.</span>Checked <span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="38"></td><td><pre>        <span class="token function">FindLast_Click</span><span class="token punctuation">(</span>sender<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="39"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="40"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="41"></td><td><pre></pre></td></tr><tr><td data-num="42"></td><td><pre><span class="token class-name"><span class="token keyword">int</span></span> nextPosition<span class="token punctuation">,</span> firstPosition<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="43"></td><td><pre><span class="token class-name"><span class="token keyword">string</span></span> word<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="44"></td><td><pre><span class="token class-name">Boolean</span> IF <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="45"></td><td><pre></pre></td></tr><tr><td data-num="46"></td><td><pre><span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Find_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="47"></td><td><pre>    txtBox<span class="token punctuation">.</span><span class="token function">Focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="48"></td><td><pre>    <span class="token function">FindWords</span><span class="token punctuation">(</span>txtInput<span class="token punctuation">.</span>Text<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="49"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p><img data-src="https://img-blog.csdnimg.cn/20200228135353669.jpg" alt="在这里插入图片描述" /></p>
+<h3 id="查找下一项"><a class="anchor" href="#查找下一项">#</a> 查找下一项</h3>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>查找下一项 </span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">FindWords</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span></span> words<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token comment">// 向下查找字符</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>nextPosition <span class="token operator">>=</span> txtBox<span class="token punctuation">.</span>Text<span class="token punctuation">.</span>Length<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        nextPosition <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    firstPosition <span class="token operator">=</span> txtBox<span class="token punctuation">.</span>Text<span class="token punctuation">.</span><span class="token function">IndexOf</span><span class="token punctuation">(</span>words<span class="token punctuation">,</span> nextPosition<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>firstPosition <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        nextPosition <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token keyword">else</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        txtBox<span class="token punctuation">.</span><span class="token function">Select</span><span class="token punctuation">(</span>firstPosition<span class="token punctuation">,</span> words<span class="token punctuation">.</span>Length<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        nextPosition <span class="token operator">=</span> firstPosition <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    word <span class="token operator">=</span> words<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    IF <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="查找上一项"><a class="anchor" href="#查找上一项">#</a> 查找上一项</h3>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>查找上一项</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">FindWordsLast</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span></span> words<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token comment">// 向上查找字符</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>IF <span class="token operator">==</span> <span class="token boolean">false</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        nextPosition <span class="token operator">=</span> txtBox<span class="token punctuation">.</span>Text<span class="token punctuation">.</span>Length<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>nextPosition <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        nextPosition <span class="token operator">=</span> txtBox<span class="token punctuation">.</span>Text<span class="token punctuation">.</span>Length<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre>    firstPosition <span class="token operator">=</span> txtBox<span class="token punctuation">.</span>Text<span class="token punctuation">.</span><span class="token function">LastIndexOf</span><span class="token punctuation">(</span>words<span class="token punctuation">,</span> nextPosition<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>firstPosition <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        nextPosition <span class="token operator">=</span> txtBox<span class="token punctuation">.</span>Text<span class="token punctuation">.</span>Length<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token keyword">else</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        txtBox<span class="token punctuation">.</span><span class="token function">Select</span><span class="token punctuation">(</span>firstPosition<span class="token punctuation">,</span> words<span class="token punctuation">.</span>Length<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        nextPosition <span class="token operator">=</span> firstPosition <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    word <span class="token operator">=</span> words<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    IF <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="19"></td><td><pre></pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token keyword">private</span> <span class="token keyword">void</span> 查找上一个<span class="token function">ToolStripMenuItem_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>    <span class="token comment">// 查找上一项，如果未查找过，则显示查找对话框</span></pre></td></tr><tr><td data-num="22"></td><td><pre>    upward<span class="token punctuation">.</span>Checked <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>    down<span class="token punctuation">.</span>Checked <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="24"></td><td><pre>    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="25"></td><td><pre>        <span class="token function">FindWordsLast</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="26"></td><td><pre>    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>        查找<span class="token function">ToolStripMenuItem_Click</span><span class="token punctuation">(</span>sender<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="29"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="替换"><a class="anchor" href="#替换">#</a> 替换</h3>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>替换</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token keyword">void</span> 替换<span class="token function">ToolStripMenuItem_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    txtInput<span class="token punctuation">.</span>Size <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Size</span><span class="token punctuation">(</span><span class="token number">190</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    txtInput<span class="token punctuation">.</span>Location <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Point</span><span class="token punctuation">(</span><span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    txtInput<span class="token punctuation">.</span>Multiline <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>    txtInputReplace<span class="token punctuation">.</span>Size <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Size</span><span class="token punctuation">(</span><span class="token number">190</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    txtInputReplace<span class="token punctuation">.</span>Location <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Point</span><span class="token punctuation">(</span><span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    txtInputReplace<span class="token punctuation">.</span>Multiline <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token class-name">Button</span> Replace <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Button</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        Name <span class="token operator">=</span> <span class="token string">"btnReplace"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        Text <span class="token operator">=</span> <span class="token string">"替换"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        Size <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Size</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        Location <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Point</span><span class="token punctuation">(</span><span class="token number">265</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    Replace<span class="token punctuation">.</span>Click <span class="token operator">+=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">EventHandler</span><span class="token punctuation">(</span>Replace_Click<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    Cancel<span class="token punctuation">.</span>Click <span class="token operator">+=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">EventHandler</span><span class="token punctuation">(</span>Cancel_Click<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre></pre></td></tr><tr><td data-num="19"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lblSearch<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>LblReplace<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>txtInput<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="22"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>txtInputReplace<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>Replace<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="24"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>Cancel<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="25"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span>Top <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Top <span class="token operator">+</span> <span class="token number">50</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="26"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span>Left <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Left <span class="token operator">+</span> <span class="token number">50</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span>Height <span class="token operator">=</span> <span class="token number">140</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span>Width <span class="token operator">=</span> <span class="token number">380</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="29"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span>StartPosition <span class="token operator">=</span> FormStartPosition<span class="token punctuation">.</span>CenterParent<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="30"></td><td><pre>    ReplaceForm<span class="token punctuation">.</span><span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="31"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="32"></td><td><pre></pre></td></tr><tr><td data-num="33"></td><td><pre><span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Replace_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="34"></td><td><pre>    txtBox<span class="token punctuation">.</span>Text <span class="token operator">=</span> txtBox<span class="token punctuation">.</span>Text<span class="token punctuation">.</span><span class="token function">Replace</span><span class="token punctuation">(</span>txtInput<span class="token punctuation">.</span>Text<span class="token punctuation">,</span> txtInputReplace<span class="token punctuation">.</span>Text<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="35"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p><img data-src="https://img-blog.csdnimg.cn/20200228135328450.jpg" alt="在这里插入图片描述" /></p>
+<h3 id="字体选择"><a class="anchor" href="#字体选择">#</a> 字体选择</h3>
+<div class="note default">
+<p>直接调用控件即可</p>
+</div>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>字体选择</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token keyword">void</span> 字体<span class="token function">ToolStripMenuItem_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token comment">// 提示用户从本地计算机安装的字体中选择字体字号</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token class-name">FontDialog</span> fontDialog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">FontDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span>fontDialog<span class="token punctuation">.</span><span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> DialogResult<span class="token punctuation">.</span>OK<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        txtBox<span class="token punctuation">.</span>Font <span class="token operator">=</span> fontDialog<span class="token punctuation">.</span>Font<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p><img data-src="https://img-blog.csdnimg.cn/20200228135229675.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VGT19IYXJvbGQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<h3 id="关于记事本"><a class="anchor" href="#关于记事本">#</a> 关于记事本</h3>
+<div class="note default">
+<p>新建一个窗口，根据自己的喜好添加标签及摆放位置</p>
+</div>
+<figure class="highlight csharp"><figcaption data-lang="C#"><span>关于记事本</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">private</span> <span class="token keyword">void</span> 关于记事本<span class="token function">ToolStripMenuItem_Click</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token comment">// 关于记事本说明</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token class-name">Label</span> lblTitle <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Label</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        Text <span class="token operator">=</span> <span class="token string">"多功能记事本"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        Size <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Size</span><span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        Location <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Point</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token class-name">Label</span> lblEdition <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Label</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        Text <span class="token operator">=</span> <span class="token string">"版本号：个性测试版"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        Size <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Size</span><span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        Location <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Point</span><span class="token punctuation">(</span><span class="token number">85</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token class-name">Label</span> lblMail <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Label</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        Text <span class="token operator">=</span> <span class="token string">"E-Mail："</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="15"></td><td><pre>        Size <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Size</span><span class="token punctuation">(</span><span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="16"></td><td><pre>        Location <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Point</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">180</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>    <span class="token class-name">LinkLabel</span> llblMail <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">LinkLabel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>        Text <span class="token operator">=</span> <span class="token string">"2417525822@qq.com"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="20"></td><td><pre>        Size <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Size</span><span class="token punctuation">(</span><span class="token number">110</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="21"></td><td><pre>        Location <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Point</span><span class="token punctuation">(</span><span class="token number">85</span><span class="token punctuation">,</span> <span class="token number">180</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="22"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>    <span class="token class-name">Label</span> lblCNDS <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Label</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="24"></td><td><pre>        Text <span class="token operator">=</span> <span class="token string">"CNDS博客："</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="25"></td><td><pre>        Size <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Size</span><span class="token punctuation">(</span><span class="token number">65</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="26"></td><td><pre>        Location <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Point</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">220</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="27"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>    <span class="token class-name">LinkLabel</span> llblCNDS <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">LinkLabel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="29"></td><td><pre>        Text <span class="token operator">=</span> <span class="token string">"https://blog.csdn.net/UFO_Harold"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="30"></td><td><pre>        Size <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Size</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="31"></td><td><pre>        Location <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Point</span><span class="token punctuation">(</span><span class="token number">85</span><span class="token punctuation">,</span> <span class="token number">220</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="32"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="33"></td><td><pre>    <span class="token class-name">Form</span> about <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Form</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="34"></td><td><pre>        Text <span class="token operator">=</span> <span class="token string">"关于记事本"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="35"></td><td><pre>        FormBorderStyle <span class="token operator">=</span> FormBorderStyle<span class="token punctuation">.</span>FixedSingle<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="36"></td><td><pre>        MaximizeBox <span class="token operator">=</span> <span class="token boolean">false</span></pre></td></tr><tr><td data-num="37"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="38"></td><td><pre></pre></td></tr><tr><td data-num="39"></td><td><pre>    llblCNDS<span class="token punctuation">.</span>Click <span class="token operator">+=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">EventHandler</span><span class="token punctuation">(</span>LlblCNDS_Click<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="40"></td><td><pre>    about<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lblTitle<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="41"></td><td><pre>    about<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lblEdition<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="42"></td><td><pre>    about<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lblMail<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="43"></td><td><pre>    about<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>llblMail<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="44"></td><td><pre>    about<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>lblCNDS<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="45"></td><td><pre>    about<span class="token punctuation">.</span>Controls<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>llblCNDS<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="46"></td><td><pre>    about<span class="token punctuation">.</span>Top <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Top <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Height <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> about<span class="token punctuation">.</span>Height <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="47"></td><td><pre>    about<span class="token punctuation">.</span>Left <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Left <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Width <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> about<span class="token punctuation">.</span>Width <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="48"></td><td><pre>    about<span class="token punctuation">.</span>StartPosition <span class="token operator">=</span> FormStartPosition<span class="token punctuation">.</span>CenterParent<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="49"></td><td><pre>    about<span class="token punctuation">.</span><span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="50"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p><span class="label success">✔️成功效果图</span></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200217134445410.jpg#pic_center" alt="程序的关于记事本功能展示" /></p>
+<h2 id="运行结果"><a class="anchor" href="#运行结果">#</a> 运行结果</h2>
+<p><img data-src="https://img-blog.csdnimg.cn/20200217134306736.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VGT19IYXJvbGQ=,size_16,color_FFFFFF,t_70#pic_center" alt="win10环境下运行程序的结果" /></p>
+<div class="note warning">
+<p>注意</p>
+</div>
+<ol>
+<li>控件请自行改名，也可使用默认控件名，此次程序的控件均已自定义名称，然后再双击控件便会自动创建控件的事件函数并跳到代码页，全数 copy 代码到自己新建的程序可能运行不起来，因为控件的事件需要双击控件才跳转到事件函数，事件方法前出现引用不是为 0 即生效；</li>
+<li>查找上一项下一项功能混用时会有一些 bug，达不到预期效果，但能运行，不会报错，一点逻辑上的问题，目前没有想到解决方法，大家可自行深入摸索，如有可以改进的地方可联系作者加以改进；</li>
+</ol>
+<div class="note danger">
+<p>项目源码仅供学习交流使用，如需项目运行请先安装 <code>.NET Framework 4.7.2</code>  框架，且图标可能因文件路径不同而无法显示，修改文件路径即可</p>
+</div>
+<ul>
+<li>
+<p>蓝奏云：<span class="exturl" data-url="aHR0cHM6Ly93d2kubGFuem91dy5jb20vaTlyNjQzZQ==">https://wwi.lanzouw.com/i9r643e</span>（链接已修正）</p>
+</li>
+<li>
+<p>百度网盘：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMUJhZ0xIUzliT0cyanZhT2NIZ2VVZ0E=">https://pan.baidu.com/s/1BagLHS9bOG2jvaOcHgeUgA</span> 提取码：y639</p>
+</li>
+<li>
+<p>Github：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0hhcm9sZC02NjYvTm90ZXBhZA==">https://github.com/Harold-666/Notepad</span></p>
+</li>
+<li>
+<p><em><strong>状态栏图标设置</strong></em></p>
+</li>
+</ul>
+<p><img data-src="https://img-blog.csdnimg.cn/20200228132709890.jpg" alt="在这里插入图片描述" /></p>
+<ul>
+<li><em><strong>项目文件目录</strong></em></li>
+</ul>
+<p><img data-src="https://img-blog.csdnimg.cn/20200228140257537.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VGT19IYXJvbGQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<div class="note success">
+<p>项目完成</p>
+</div>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2022-02-20 16:39:37" itemprop="dateModified" datetime="2022-02-20T16:39:37+08:00">2022-02-20</time>
+  </span>
+  <span id="notepad-program/" class="item leancloud_visitors" data-flag-title="C#编写一个较完整的记事本程序" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Harold WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="Harold Alipay">
+        <p>Alipay</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Harold <i class="ic i-at"><em>@</em></i>Harold
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="https://harold_popo.gitee.io/notepad-program/" title="C#编写一个较完整的记事本程序">https://harold_popo.gitee.io/notepad-program/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+    </div>
+    <div class="item right">
+      
+
+  <a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/permeable_env/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclga70tsj20zk0m84mr.jpg" title="安全渗透环境准备">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> OWASP安全渗透实战</span>
+  <h3>安全渗透环境准备</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text"> 开发环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E5%B9%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text"> 创建项目并配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AA%97%E4%BD%93%E6%96%87%E4%BB%B6"><span class="toc-number">2.1.</span> <span class="toc-text"> 创建窗体文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0%E5%8F%8A%E6%A1%86%E6%9E%B6"><span class="toc-number">2.2.</span> <span class="toc-text"> 配置项目名称及框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E7%95%8C%E9%9D%A2"><span class="toc-number">2.3.</span> <span class="toc-text"> 设计界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AA%97%E4%BD%93%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%8E%A7%E4%BB%B6%E5%92%8C%E7%BB%84%E4%BB%B6%E5%A6%82%E4%B8%8B"><span class="toc-number">2.4.</span> <span class="toc-text"> 窗体添加的控件和组件如下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AA%97%E4%BD%93%E5%B1%9E%E6%80%A7"><span class="toc-number">2.5.</span> <span class="toc-text"> 窗体属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.6.</span> <span class="toc-text"> 快捷键设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%B1%9E%E6%80%A7"><span class="toc-number">2.7.</span> <span class="toc-text"> 程序属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%BC%94%E7%A4%BA"><span class="toc-number">3.</span> <span class="toc-text"> 代码演示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E7%9A%84%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-number">3.1.</span> <span class="toc-text"> 引用的命名空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="toc-number">3.2.</span> <span class="toc-text"> 主要功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 新建文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 打开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E5%AD%98"><span class="toc-number">3.2.3.</span> <span class="toc-text"> 保存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%A6%E5%AD%98%E4%B8%BA"><span class="toc-number">3.2.4.</span> <span class="toc-text"> 另存为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8D%B0"><span class="toc-number">3.2.5.</span> <span class="toc-text"> 打印</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91"><span class="toc-number">3.2.6.</span> <span class="toc-text"> 编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-number">3.2.7.</span> <span class="toc-text"> 查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E4%B8%8B%E4%B8%80%E9%A1%B9"><span class="toc-number">3.2.8.</span> <span class="toc-text"> 查找下一项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E4%B8%8A%E4%B8%80%E9%A1%B9"><span class="toc-number">3.2.9.</span> <span class="toc-text"> 查找上一项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2"><span class="toc-number">3.2.10.</span> <span class="toc-text"> 替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E9%80%89%E6%8B%A9"><span class="toc-number">3.2.11.</span> <span class="toc-text"> 字体选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%AE%B0%E4%BA%8B%E6%9C%AC"><span class="toc-number">3.2.12.</span> <span class="toc-text"> 关于记事本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">3.3.</span> <span class="toc-text"> 运行结果</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Harold"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Harold</p>
+  <div class="description" itemprop="description">我踏清风寻杨柳，谁有龙虾谁有酒。清风深知杨柳意，啤酒龙虾又相聚。</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">18</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">8</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item facebook" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2hhcm9sZC5wb3BvLmxvdmU=" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;harold.popo.love"><i class="ic i-facebook"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS81VDBVVVJCVXk5SWN5enY=" title="https:&#x2F;&#x2F;twitter.com&#x2F;5T0UURBUy9Icyzv"><i class="ic i-twitter"></i></span>
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0hhcm9sZC02NjY=" title="https:&#x2F;&#x2F;github.com&#x2F;Harold-666"><i class="ic i-github"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS82NjMzNDAxOTkz" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;6633401993"><i class="ic i-weibo"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOjI0MTc1MjU4MjJAcXEuY29t" title="mailto:2417525822@qq.com"><i class="ic i-envelope"></i></span>
+      <a href="https://harold_popo.gitee.io/about" title="https:&#x2F;&#x2F;harold_popo.gitee.io&#x2F;about" class="item about"><i class="ic i-address-card"></i></a>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>Friends</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-magic"></i>Links</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/links/webstack" rel="section"><i class="ic i-star"></i>Webstack</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/links/ctf-tools" rel="section"><i class="ic i-paper-plane"></i>CTF-Tools</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/statistics" rel="section"><i class="ic i-clock"></i>Statistics</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Git/" title="In Git">Git</a>
+</div>
+
+    <span><a href="/Git/Configures-Github-and-Gitee/" title="Git同时配置Github和Gitee">Git同时配置Github和Gitee</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/360-SecLab/CTF-Web/" title="In 360-CTF-Web篇">360-CTF-Web篇</a>
+</div>
+
+    <span><a href="/360-SecLab/CTF-Web/web-02/" title="CTF-Web-02">CTF-Web-02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Java/" title="In Java">Java</a>
+</div>
+
+    <span><a href="/Java/Annotation/" title="注解">注解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/notepad-program/" title="C#编写一个较完整的记事本程序">C#编写一个较完整的记事本程序</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/" title="In OWASP安全渗透实战">OWASP安全渗透实战</a>
+</div>
+
+    <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/permeable_env/" title="安全渗透环境准备">安全渗透环境准备</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/360-SecLab/CTF-Passwd/" title="In 360-CTF-密码学篇">360-CTF-密码学篇</a>
+</div>
+
+    <span><a href="/360-SecLab/CTF-Passwd/passwd-03/" title="CTF-Passwd-03">CTF-Passwd-03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Git/" title="In Git">Git</a>
+</div>
+
+    <span><a href="/Git/Commit-Flow/" title="Git提交流程">Git提交流程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Java/" title="In Java">Java</a>
+</div>
+
+    <span><a href="/Java/Reflect/" title="反射机制">反射机制</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/" title="In OWASP安全渗透实战">OWASP安全渗透实战</a>
+</div>
+
+    <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_inclusion/" title="文件包含漏洞">文件包含漏洞</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Harold @ Harold's Blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="Symbols count total">37k words</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="Reading time total">33 mins.</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'notepad-program/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//fastly.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js,npm/echarts@5.2.2/dist/echarts.min.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
