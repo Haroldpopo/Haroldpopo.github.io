@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://harold-666.github.io/Blog</id>
+    <id>https://harold-666.github.io</id>
     <title>Harold • Posts by &#34;渗透工具使用&#34; category</title>
-    <link href="https://harold-666.github.io/Blog" />
+    <link href="https://harold-666.github.io" />
     <updated>2022-06-01T13:55:30.479Z</updated>
-    <category term="Java" />
     <category term="Git" />
+    <category term="Java" />
     <category term="CTF" />
     <category term="Kali" />
     <entry>
-        <id>https://harold-666.github.io/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/</id>
+        <id>https://harold-666.github.io/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/</id>
         <title>sqlmap工具使用</title>
-        <link rel="alternate" href="https://harold-666.github.io/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/"/>
+        <link rel="alternate" href="https://harold-666.github.io/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/"/>
         <content type="html">&lt;h1 id=&#34;sqlmap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sqlmap&#34;&gt;#&lt;/a&gt; SQLMAP&lt;/h1&gt;
 &lt;h2 id=&#34;sqlmap简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sqlmap简介&#34;&gt;#&lt;/a&gt; SQLMAP 简介&lt;/h2&gt;
 &lt;p&gt;sqlmap 是一款用来检测与利用 SQL 注入漏洞的免费开源工具，有一个非常棒的特性，即对检测与利用的自动化处理 (数据库指纹、访间底层文件系统、执行命令）。&lt;/p&gt;

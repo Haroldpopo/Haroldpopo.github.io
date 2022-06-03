@@ -2,19 +2,19 @@
 <rss version="2.0">
     <channel>
         <title>Harold • Posts by &#34;360-ctf-web篇&#34; category</title>
-        <link>https://harold-666.github.io/Blog</link>
+        <link>https://harold-666.github.io</link>
         <description>我踏清风寻杨柳，谁有龙虾谁有酒。清风深知杨柳意，啤酒龙虾又相聚。</description>
         <language>en</language>
         <pubDate>Thu, 15 Apr 2021 16:28:53 +0800</pubDate>
         <lastBuildDate>Thu, 15 Apr 2021 16:28:53 +0800</lastBuildDate>
-        <category>Java</category>
         <category>Git</category>
+        <category>Java</category>
         <category>CTF</category>
         <category>Kali</category>
         <item>
-            <guid isPermalink="true">https://harold-666.github.io/Blog/360-SecLab/CTF-Web/web-03/</guid>
+            <guid isPermalink="true">https://harold-666.github.io/360-SecLab/CTF-Web/web-03/</guid>
             <title>CTF-Web-03</title>
-            <link>https://harold-666.github.io/Blog/360-SecLab/CTF-Web/web-03/</link>
+            <link>https://harold-666.github.io/360-SecLab/CTF-Web/web-03/</link>
             <category>CTF</category>
             <pubDate>Thu, 15 Apr 2021 16:28:53 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
@@ -108,9 +108,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://harold-666.github.io/Blog/360-SecLab/CTF-Web/web-02/</guid>
+            <guid isPermalink="true">https://harold-666.github.io/360-SecLab/CTF-Web/web-02/</guid>
             <title>CTF-Web-02</title>
-            <link>https://harold-666.github.io/Blog/360-SecLab/CTF-Web/web-02/</link>
+            <link>https://harold-666.github.io/360-SecLab/CTF-Web/web-02/</link>
             <category>CTF</category>
             <pubDate>Tue, 13 Apr 2021 21:45:54 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
@@ -157,9 +157,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://harold-666.github.io/Blog/360-SecLab/CTF-Web/web-01/</guid>
+            <guid isPermalink="true">https://harold-666.github.io/360-SecLab/CTF-Web/web-01/</guid>
             <title>CTF-Web-01</title>
-            <link>https://harold-666.github.io/Blog/360-SecLab/CTF-Web/web-01/</link>
+            <link>https://harold-666.github.io/360-SecLab/CTF-Web/web-01/</link>
             <category>CTF</category>
             <pubDate>Mon, 12 Apr 2021 21:45:37 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
