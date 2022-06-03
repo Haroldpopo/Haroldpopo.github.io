@@ -2,19 +2,19 @@
 <rss version="2.0">
     <channel>
         <title>Harold • Posts by &#34;kali&#34; tag</title>
-        <link>https://harold_popo.gitee.io</link>
+        <link>https://harold-666.github.io/Blog</link>
         <description>我踏清风寻杨柳，谁有龙虾谁有酒。清风深知杨柳意，啤酒龙虾又相聚。</description>
         <language>en</language>
         <pubDate>Wed, 01 Jun 2022 21:55:30 +0800</pubDate>
         <lastBuildDate>Wed, 01 Jun 2022 21:55:30 +0800</lastBuildDate>
-        <category>Git</category>
         <category>Java</category>
+        <category>Git</category>
         <category>CTF</category>
         <category>Kali</category>
         <item>
-            <guid isPermalink="true">https://harold_popo.gitee.io/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/</guid>
+            <guid isPermalink="true">https://harold-666.github.io/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/</guid>
             <title>sqlmap工具使用</title>
-            <link>https://harold_popo.gitee.io/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/</link>
+            <link>https://harold-666.github.io/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/</link>
             <category>Kali</category>
             <pubDate>Wed, 01 Jun 2022 21:55:30 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;sqlmap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sqlmap&#34;&gt;#&lt;/a&gt; SQLMAP&lt;/h1&gt;
@@ -44,9 +44,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://harold_popo.gitee.io/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_inclusion/</guid>
+            <guid isPermalink="true">https://harold-666.github.io/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_inclusion/</guid>
             <title>文件包含漏洞</title>
-            <link>https://harold_popo.gitee.io/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_inclusion/</link>
+            <link>https://harold-666.github.io/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_inclusion/</link>
             <category>Kali</category>
             <pubDate>Tue, 26 Jan 2021 20:38:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;文件包含漏洞&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件包含漏洞&#34;&gt;#&lt;/a&gt; 文件包含漏洞&lt;/h1&gt;
@@ -99,9 +99,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://harold_popo.gitee.io/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_upload/</guid>
+            <guid isPermalink="true">https://harold-666.github.io/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_upload/</guid>
             <title>文件上传漏洞</title>
-            <link>https://harold_popo.gitee.io/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_upload/</link>
+            <link>https://harold-666.github.io/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_upload/</link>
             <category>Kali</category>
             <pubDate>Mon, 25 Jan 2021 16:27:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;文件上传漏洞&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件上传漏洞&#34;&gt;#&lt;/a&gt; 文件上传漏洞&lt;/h1&gt;
@@ -159,9 +159,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://harold_popo.gitee.io/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/permeable_env/</guid>
+            <guid isPermalink="true">https://harold-666.github.io/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/permeable_env/</guid>
             <title>安全渗透环境准备</title>
-            <link>https://harold_popo.gitee.io/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/permeable_env/</link>
+            <link>https://harold-666.github.io/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/permeable_env/</link>
             <category>Kali</category>
             <pubDate>Tue, 29 Dec 2020 20:17:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;安全渗透环境准备&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安全渗透环境准备&#34;&gt;#&lt;/a&gt; 安全渗透环境准备&lt;/h1&gt;

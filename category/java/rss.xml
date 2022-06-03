@@ -2,19 +2,19 @@
 <rss version="2.0">
     <channel>
         <title>Harold • Posts by &#34;java&#34; category</title>
-        <link>https://harold_popo.gitee.io</link>
+        <link>https://harold-666.github.io/Blog</link>
         <description>我踏清风寻杨柳，谁有龙虾谁有酒。清风深知杨柳意，啤酒龙虾又相聚。</description>
         <language>en</language>
         <pubDate>Wed, 01 Jun 2022 21:55:30 +0800</pubDate>
         <lastBuildDate>Wed, 01 Jun 2022 21:55:30 +0800</lastBuildDate>
-        <category>Git</category>
         <category>Java</category>
+        <category>Git</category>
         <category>CTF</category>
         <category>Kali</category>
         <item>
-            <guid isPermalink="true">https://harold_popo.gitee.io/Java/Reflect/</guid>
+            <guid isPermalink="true">https://harold-666.github.io/Blog/Java/Reflect/</guid>
             <title>反射机制</title>
-            <link>https://harold_popo.gitee.io/Java/Reflect/</link>
+            <link>https://harold-666.github.io/Blog/Java/Reflect/</link>
             <category>Java</category>
             <pubDate>Wed, 01 Jun 2022 21:55:30 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
@@ -235,9 +235,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://harold_popo.gitee.io/Java/Annotation/</guid>
+            <guid isPermalink="true">https://harold-666.github.io/Blog/Java/Annotation/</guid>
             <title>注解</title>
-            <link>https://harold_popo.gitee.io/Java/Annotation/</link>
+            <link>https://harold-666.github.io/Blog/Java/Annotation/</link>
             <category>Java</category>
             <pubDate>Wed, 01 Jun 2022 21:55:30 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;注解&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#注解&#34;&gt;#&lt;/a&gt; 注解&lt;/h1&gt;
