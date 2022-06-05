@@ -119,12 +119,12 @@ Harold's Blog = Harold = Study Notes</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipesrnqv3j20zk0m8ava.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclfb3vzhj20zk0m8wny.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
         </ul>
       </div>
     </header>
@@ -170,14 +170,14 @@ Harold's Blog = Harold = Study Notes</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="git-提交流程"><a class="anchor" href="#git-提交流程">#</a> Git 提交流程</h1>
+    <h1 id="git-提交一般流程"><a class="anchor" href="#git-提交一般流程">#</a> Git 提交一般流程</h1>
 <h2 id="创建全局用户名-邮箱"><a class="anchor" href="#创建全局用户名-邮箱">#</a> 创建全局用户名、邮箱</h2>
 <figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 只用一个账号配置全局用户较好</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> config --global user.name <span class="token string">"Your name"</span></pre></td></tr><tr><td data-num="3"></td><td><pre>$ <span class="token function">git</span> config --global user.email email@xx.com</pre></td></tr></table></figure><h2 id="初次创建仓库"><a class="anchor" href="#初次创建仓库">#</a> 初次创建仓库</h2>
 <h3 id="克隆远程仓库到本地"><a class="anchor" href="#克隆远程仓库到本地">#</a> 克隆远程仓库到本地</h3>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># Gitee</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> clone https://gitee.com/Harold_popo/Harold_popo.git</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment"># Github</span></pre></td></tr><tr><td data-num="5"></td><td><pre>$ <span class="token function">git</span> clone https://github.com/Harold-666/Harold-Cnblogs-Theme-SimpleMemory.git</pre></td></tr></table></figure><p><em>github 网站为国外网站，clone 很慢，速度几 kb/s 不等，使用 GitHub 国内镜像网站 clone 速度更快</em></p>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># Github 镜像网站 github.com.cnpmjs.org</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment"># 好像失效了</span></pre></td></tr><tr><td data-num="3"></td><td><pre>$ <span class="token function">git</span> clone https://github.com.cnpmjs.org/Harold-666/Harold-Cnblogs-SimpleMemory.git</pre></td></tr></table></figure><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 镜像网站最新可用 gitcode.net/mirrors</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> clone https://gitcode.net/mirrors/Harold-666/Harold-Cnblogs-SimpleMemory.git</pre></td></tr></table></figure><p><em>注意：使用了镜像网站，如要推送到仓库则需更改关联库，否则会 push 失败</em></p>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>$ <span class="token function">git</span> remote set-url --push origin  https://github.com/Harold-666/Harold-Cnblogs-SimpleMemory</pre></td></tr></table></figure><h3 id="直接建立本地仓库"><a class="anchor" href="#直接建立本地仓库">#</a> 直接建立本地仓库</h3>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 输入内容并新建到 README.md 文件</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token builtin class-name">echo</span> <span class="token string">"# Harold-Cnblogs-Theme-SimpleMemory"</span> <span class="token operator">>></span> README.md</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment"># 初始化仓库</span></pre></td></tr><tr><td data-num="5"></td><td><pre>$ <span class="token function">git</span> init</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token comment"># 查看本地库的代码状态</span></pre></td></tr><tr><td data-num="8"></td><td><pre>$ <span class="token function">git</span> status <span class="token builtin class-name">.</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token comment"># 添加 README.md 文件到缓存区</span></pre></td></tr><tr><td data-num="11"></td><td><pre>$ <span class="token function">git</span> <span class="token function">add</span> README.md</pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token comment"># 提交文件到缓存区</span></pre></td></tr><tr><td data-num="14"></td><td><pre>$ <span class="token function">git</span> commit -m <span class="token string">"first commit"</span></pre></td></tr><tr><td data-num="15"></td><td><pre></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token comment"># 创建分支 master</span></pre></td></tr><tr><td data-num="17"></td><td><pre>$ <span class="token function">git</span> branch -M master</pre></td></tr><tr><td data-num="18"></td><td><pre></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token comment"># 关联远程仓库</span></pre></td></tr><tr><td data-num="20"></td><td><pre>$ <span class="token function">git</span> remote <span class="token function">add</span> origin https://github.com/Harold-666/Harold-Cnblogs-Theme-SimpleMemory.git</pre></td></tr><tr><td data-num="21"></td><td><pre></pre></td></tr><tr><td data-num="22"></td><td><pre><span class="token comment"># 推送到远程仓库的 master 分支</span></pre></td></tr><tr><td data-num="23"></td><td><pre>$ <span class="token function">git</span> push -u origin master</pre></td></tr></table></figure><h2 id="查看分支"><a class="anchor" href="#查看分支">#</a> 查看分支</h2>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># Gitee</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> clone https://gitee.com/Harold_popo/Harold_popo.git</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment"># Github</span></pre></td></tr><tr><td data-num="5"></td><td><pre>$ <span class="token function">git</span> clone https://github.com/Haroldpopo/Harold-Cnblogs-Theme-SimpleMemory.git</pre></td></tr></table></figure><p><em>github 网站为国外网站，clone 很慢，速度几 kb/s 不等，使用 GitHub 国内镜像网站 clone 速度更快</em></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># Github 镜像网站 github.com.cnpmjs.org</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment"># 好像失效了</span></pre></td></tr><tr><td data-num="3"></td><td><pre>$ <span class="token function">git</span> clone https://github.com.cnpmjs.org/Haroldpopo/Harold-Cnblogs-SimpleMemory.git</pre></td></tr></table></figure><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 镜像网站最新可用 gitcode.net/mirrors</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> clone https://gitcode.net/mirrors/Haroldpopo/Harold-Cnblogs-SimpleMemory.git</pre></td></tr></table></figure><p><em>注意：使用了镜像网站，如要推送到仓库则需更改关联库，否则会 push 失败</em></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>$ <span class="token function">git</span> remote set-url --push origin  https://github.com/Haroldpopo/Harold-Cnblogs-SimpleMemory.git</pre></td></tr></table></figure><h3 id="直接建立本地仓库"><a class="anchor" href="#直接建立本地仓库">#</a> 直接建立本地仓库</h3>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 输入内容并新建到 README.md 文件</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token builtin class-name">echo</span> <span class="token string">"# Harold-Cnblogs-Theme-SimpleMemory"</span> <span class="token operator">>></span> README.md</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment"># 初始化仓库</span></pre></td></tr><tr><td data-num="5"></td><td><pre>$ <span class="token function">git</span> init</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token comment"># 查看本地库的代码状态</span></pre></td></tr><tr><td data-num="8"></td><td><pre>$ <span class="token function">git</span> status</pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token comment"># 添加 README.md 文件到缓存区</span></pre></td></tr><tr><td data-num="11"></td><td><pre>$ <span class="token function">git</span> <span class="token function">add</span> README.md</pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token comment"># 提交文件到缓存区</span></pre></td></tr><tr><td data-num="14"></td><td><pre>$ <span class="token function">git</span> commit -m <span class="token string">"First commit"</span></pre></td></tr><tr><td data-num="15"></td><td><pre></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token comment"># 创建分支 master</span></pre></td></tr><tr><td data-num="17"></td><td><pre>$ <span class="token function">git</span> branch -M master</pre></td></tr><tr><td data-num="18"></td><td><pre></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token comment"># 关联远程仓库</span></pre></td></tr><tr><td data-num="20"></td><td><pre>$ <span class="token function">git</span> remote <span class="token function">add</span> origin https://github.com/Haroldpopo/Harold-Cnblogs-Theme-SimpleMemory.git</pre></td></tr><tr><td data-num="21"></td><td><pre></pre></td></tr><tr><td data-num="22"></td><td><pre><span class="token comment"># 推送到远程仓库的 master 分支</span></pre></td></tr><tr><td data-num="23"></td><td><pre>$ <span class="token function">git</span> push -u origin master</pre></td></tr></table></figure><h2 id="查看分支"><a class="anchor" href="#查看分支">#</a> 查看分支</h2>
 <figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 1、查看所有分支</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> branch -a</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment"># 2、- 查看当前使用分支 (结果列表中前面标 * 号的表示当前使用分支)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>$ <span class="token function">git</span> branch</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token comment"># 3、切换分支</span></pre></td></tr><tr><td data-num="8"></td><td><pre>$ <span class="token function">git</span> checkout 分支名</pre></td></tr></table></figure><h2 id="推送到远程仓库"><a class="anchor" href="#推送到远程仓库">#</a> 推送到远程仓库</h2>
 <p>参数 <code>-u</code>  说明：指定将本地分支推送到 origin 主机，同时指定 origin 为默认主机，后面可不加此参数，直接 <code>git push</code></p>
 <figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 第一次将本地仓库推送到远程仓库</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> push -u origin master</pre></td></tr></table></figure><ul>
@@ -203,7 +203,7 @@ Harold's Blog = Harold = Study Notes</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2022-03-13 15:07:54" itemprop="dateModified" datetime="2022-03-13T15:07:54+08:00">2022-03-13</time>
+    <time title="Modified: 2022-06-05 23:21:05" itemprop="dateModified" datetime="2022-06-05T23:21:05+08:00">2022-06-05</time>
   </span>
   <span id="Git/Commit-Flow/" class="item leancloud_visitors" data-flag-title="Git提交流程" title="Views">
       <span class="icon">
@@ -261,7 +261,7 @@ Harold's Blog = Harold = Study Notes</title>
     <div class="item left">
       
 
-  <a href="/Blog/360-SecLab/CTF-Passwd/passwd-03/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeudstjqj20zk0m8k3r.jpg" title="CTF-Passwd-03">
+  <a href="/Blog/360-SecLab/CTF-Passwd/passwd-03/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipew8gmvyj20zk0m87wh.jpg" title="CTF-Passwd-03">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 360-CTF-密码学篇</span>
   <h3>CTF-Passwd-03</h3>
@@ -271,7 +271,7 @@ Harold's Blog = Harold = Study Notes</title>
     <div class="item right">
       
 
-  <a href="/Blog/Git/Common-Commands/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclip4jbpj20zk0m87cv.jpg" title="Git常用命令">
+  <a href="/Blog/Git/Common-Commands/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipewr8iypj20zk0m8b29.jpg" title="Git常用命令">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> Git</span>
   <h3>Git常用命令</h3>
@@ -293,7 +293,7 @@ Harold's Blog = Harold = Study Notes</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text"> Git 提交流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%85%A8%E5%B1%80%E7%94%A8%E6%88%B7%E5%90%8D-%E9%82%AE%E7%AE%B1"><span class="toc-number">1.1.</span> <span class="toc-text"> 创建全局用户名、邮箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E6%AC%A1%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.</span> <span class="toc-text"> 初次创建仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 克隆远程仓库到本地</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 直接建立本地仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF"><span class="toc-number">1.3.</span> <span class="toc-text"> 查看分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.4.</span> <span class="toc-text"> 推送到远程仓库</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-%E6%8F%90%E4%BA%A4%E4%B8%80%E8%88%AC%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text"> Git 提交一般流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%85%A8%E5%B1%80%E7%94%A8%E6%88%B7%E5%90%8D-%E9%82%AE%E7%AE%B1"><span class="toc-number">1.1.</span> <span class="toc-text"> 创建全局用户名、邮箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E6%AC%A1%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.</span> <span class="toc-text"> 初次创建仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 克隆远程仓库到本地</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 直接建立本地仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF"><span class="toc-number">1.3.</span> <span class="toc-text"> 查看分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.4.</span> <span class="toc-text"> 推送到远程仓库</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -433,22 +433,30 @@ Harold's Blog = Harold = Study Notes</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/Blog/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
-<i class="ic i-angle-right"></i>
-<a href="/Blog/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/" title="In OWASP安全渗透实战">OWASP安全渗透实战</a>
 </div>
 
-    <span><a href="/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/permeable_env/" title="安全渗透环境准备">安全渗透环境准备</a></span>
+    <span><a href="/Blog/notepad-program/" title="C#编写一个较完整的记事本程序">C#编写一个较完整的记事本程序</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/Blog/categories/Git/" title="In Git">Git</a>
+<a href="/Blog/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
+<i class="ic i-angle-right"></i>
+<a href="/Blog/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/" title="In OWASP安全渗透实战">OWASP安全渗透实战</a>
 </div>
 
-    <span><a href="/Blog/Git/Configures-Github-and-Gitee/" title="Git同时配置Github和Gitee">Git同时配置Github和Gitee</a></span>
+    <span><a href="/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_upload/" title="文件上传漏洞">文件上传漏洞</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Blog/hello-world/" title="Hello World">Hello World</a></span>
   </li>
 
       
@@ -479,6 +487,27 @@ Harold's Blog = Harold = Study Notes</title>
   <li class="item">
     
 <div class="breadcrumb">
+</div>
+
+    <span><a href="/Blog/fibonacci/" title="斐波那契数列">斐波那契数列</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/Blog/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
+<i class="ic i-angle-right"></i>
+<a href="/Blog/categories/360-SecLab/CTF-Passwd/" title="In 360-CTF-密码学篇">360-CTF-密码学篇</a>
+</div>
+
+    <span><a href="/Blog/360-SecLab/CTF-Passwd/passwd-03/" title="CTF-Passwd-03">CTF-Passwd-03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/Blog/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
 <i class="ic i-angle-right"></i>
 <a href="/Blog/categories/360-SecLab/CTF-Passwd/" title="In 360-CTF-密码学篇">360-CTF-密码学篇</a>
@@ -491,10 +520,12 @@ Harold's Blog = Harold = Study Notes</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/Blog/categories/Git/" title="In Git">Git</a>
+<a href="/Blog/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
+<i class="ic i-angle-right"></i>
+<a href="/Blog/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" title="In 渗透工具使用">渗透工具使用</a>
 </div>
 
-    <span><a href="/Blog/Git/Common-Commands/" title="Git常用命令">Git常用命令</a></span>
+    <span><a href="/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/" title="sqlmap工具使用">sqlmap工具使用</a></span>
   </li>
 
       
@@ -506,38 +537,7 @@ Harold's Blog = Harold = Study Notes</title>
 <a href="/Blog/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/" title="In OWASP安全渗透实战">OWASP安全渗透实战</a>
 </div>
 
-    <span><a href="/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_upload/" title="文件上传漏洞">文件上传漏洞</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Blog/fibonacci/" title="斐波那契数列">斐波那契数列</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/Blog/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
-<i class="ic i-angle-right"></i>
-<a href="/Blog/categories/360-SecLab/CTF-Web/" title="In 360-CTF-Web篇">360-CTF-Web篇</a>
-</div>
-
-    <span><a href="/Blog/360-SecLab/CTF-Web/web-01/" title="CTF-Web-01">CTF-Web-01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/Blog/categories/Java/" title="In Java">Java</a>
-</div>
-
-    <span><a href="/Blog/Java/Annotation/" title="注解">注解</a></span>
+    <span><a href="/Blog/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/permeable_env/" title="安全渗透环境准备">安全渗透环境准备</a></span>
   </li>
 
   </ul>
