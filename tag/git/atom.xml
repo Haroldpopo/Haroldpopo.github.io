@@ -6,8 +6,8 @@
     <updated>2021-06-01T05:05:26.000Z</updated>
     <category term="Git" />
     <category term="Java" />
-    <category term="CTF" />
     <category term="Kali" />
+    <category term="CTF" />
     <entry>
         <id>https://haroldpopo.github.io/Git/Configures-Github-and-Gitee/</id>
         <title>Git同时配置Github和Gitee</title>
