@@ -8,9 +8,9 @@
         <pubDate>Tue, 01 Jun 2021 13:05:26 +0800</pubDate>
         <lastBuildDate>Tue, 01 Jun 2021 13:05:26 +0800</lastBuildDate>
         <category>Git</category>
+        <category>CTF</category>
         <category>Java</category>
         <category>Kali</category>
-        <category>CTF</category>
         <item>
             <guid isPermalink="true">https://haroldpopo.github.io/Git/Configures-Github-and-Gitee/</guid>
             <title>Git同时配置Github和Gitee</title>
