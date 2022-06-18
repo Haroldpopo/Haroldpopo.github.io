@@ -1,0 +1,192 @@
+# Alternate site name
+alternate: Harold's Blog
+
+# themes/shoka/source/images/***
+favicon:
+  apple_touch_icon: /apple-touch-icon.png
+  safari_pinned_tab: /logo.svg
+  # android_manifest: /manifest.json
+  ms_browserconfig: /browserconfig.xml
+
+# Dark Mode
+# By default, the page judges whether to turn on the dark mode according to the device settings or user selection
+# if `true`, the page will be displayed directly as Dark Mode, unless the user makes another choice
+# darkmode: true
+
+# Whether to show the loading cat
+loader:
+  start: true # When entering the page
+  switch: false # When switching to another page
+
+# click with Firework
+fireworks:
+  enable: true
+  color:
+    - "rgba(255,182,185,.9)"
+    - "rgba(250,227,217,.9)"
+    - "rgba(187,222,214,.9)"
+    - "rgba(138,198,209,.9)"
+
+menu:
+  home: / || home
+  about: /about/ || user
+  posts:
+    default: / || feather
+    archives: /archives/ || list-alt
+    categories: /categories/ || th
+    tags: /tags/ || tags
+  Friends: /friends/ || heart
+  Links:
+    default: / || magic
+    Webstack: /links/webstack || star
+    CTF-Tools: /links/ctf-tools || paper-plane
+  Statistics: /statistics || clock
+
+# Social Links
+# Usage: `Key: permalink || icon || color`
+# Key is the link label showing to end users.
+# Value before `||` delimiter is the target permalink,
+# secend value is the name of Font icon.
+social:
+  facebook: https://www.facebook.com/harold.popo.love || facebook || "#1278F3"
+  twitter: https://twitter.com/5T0UURBUy9Icyzv || twitter || "#00aff0"
+  github: https://github.com/Haroldpopo || github || "#191717"
+  weibo: https://weibo.com/u/6633401993 || weibo || "#ea716e"
+  email: mailto:2417525822@qq.com || envelope || "#55acd5"
+  about: https://haroldpopo.github.io/about || address-card || "#3b5998"
+
+sidebar:
+  # Sidebar Position.
+  position: left
+  # position: right
+  # Replace the default avatar image and set the url here.
+  avatar: avatar.jpg
+
+# Comments
+# Valine
+# For more information: https://github.com/amehime/MiniValine
+valine:
+  appId: D3wQLQTplIdO4vQq5s10kxn2-MdYXbMMI #Your_appId
+  appKey: raiJ9yKhXfCQJoWNOo7hopQe #Your_appkey
+  placeholder: 写下您的留言吧！ヽ(○´∀`)ﾉ♪ # Comment box placeholder
+  avatar: mp # Gravatar style : mp, identicon, monsterid, wavatar, robohash, retro
+  pageSize: 10 # Pagination size
+  lang: en
+  visitor: true # Article reading statistic
+  NoRecordIP: false # Whether to record the commenter IP
+  serverURLs: https://d3wqlqtp.api.lncldglobal.com # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
+  powerMode: true
+  tagMeta:
+    visitor: 新朋友
+    master: 作者
+    friend: 小伙伴
+    investor: 金主粑粑
+  tagColor:
+    master: "var(--color-orange)"
+    friend: "var(--color-aqua)"
+    investor: "var(--color-pink)"
+  tagMember:
+    master:
+      - 9daa3e29a1cdb8a1c08c2570413000a8 # hash of 2417525822@qq.com
+    friend:
+      - bfa5531d3caea69ffa90ef21c505e3dc # hash of 15360661890@163.com
+      - 2de7163f67f0a70f80092ba199a5c6d3 # hash of zkz20081204@126.com
+    investor:
+      # - hash of investor@email.com
+
+# bgm
+audio:
+  - title: 网易云音乐
+    list:
+     - https://music.163.com/#/playlist?id=2031842656
+     - https://music.163.com/#/playlist?id=2088001742
+     - https://music.163.com/#/playlist?id=2943811283
+     - https://music.163.com/#/playlist?id=2297706586
+  - title: 轻音乐
+    list:
+     - https://y.qq.com/n/yqq/playlist/3535982902.html
+  - title: 钢琴曲
+    list:
+     - https://y.qq.com/n/yqq/album/001k4Q4m2RYxCy.html
+
+# 缺少这个插件，首页卡片翻转效果在部分浏览器中无法正确显示。
+autoprefixer:
+  exclude:
+    - '*.min.css'
+
+# Dependencies: https://github.com/amehime/hexo-renderer-multi-markdown-it
+pangu: false
+
+minify:
+  html:
+    enable: true
+    stamp: false
+    exclude:
+      - '**/json.ejs'
+      - '**/atom.ejs'
+      - '**/rss.ejs'
+  css:
+    enable: true
+    stamp: false
+    exclude:
+      - '**/*.min.css'
+  js:
+    enable: true
+    stamp: false
+    mangle:
+      toplevel: true
+    output:
+    compress:
+    exclude:
+      - '**/*.min.js'
+
+feed:
+    limit: 20
+    order_by: "-date"
+    tag_dir: false
+    category_dir: false
+    rss:
+        enable: true
+        template: "themes/shoka/layout/_alternate/rss.ejs"
+        output: "rss.xml"
+    atom:
+        enable: true
+        template: "themes/shoka/layout/_alternate/atom.ejs"
+        output: "atom.xml"
+    jsonFeed:
+        enable: true
+        template: "themes/shoka/layout/_alternate/json.ejs"
+        output: "feed.json"
+
+# 页尾全站统计
+footer:
+  since: 2020
+  count: true
+  lantern: # 新年灯笼
+    enable: false
+    word1: 春
+    word2: 节
+
+# 文章界面统计
+post:
+  count: true
+
+vendors:
+  css:
+    katex: npm/katex@0.12.0/dist/katex.min.css
+    comment: css/comment.css
+    fancybox: combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css
+  js:
+    pace: npm/pace-js@1.0.2/pace.min.js
+    pjax: npm/pjax@0.2.8/pjax.min.js
+    fetch: npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js
+    anime: npm/animejs@3.2.0/lib/anime.min.js
+    algolia: npm/algoliasearch@4/dist/algoliasearch-lite.umd.js
+    instantsearch: npm/instantsearch.js@4/dist/instantsearch.production.min.js
+    lazyload: npm/lozad@1/dist/lozad.min.js
+    quicklink: npm/quicklink@2/dist/quicklink.umd.js
+    fancybox: combine/npm/jquery@3.5.1/dist/jquery.min.js,npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js
+    valine: gh/Haroldpopo/MiniValine@5.0.0/dist/MiniValine.min.js
+    copy_tex: npm/katex@0.12.0/dist/contrib/copy-tex.min.js
+    chart: npm/frappe-charts@1.5.0/dist/frappe-charts.min.iife.min.js
+    echarts: npm/echarts@5.2.2/dist/echarts.min.js

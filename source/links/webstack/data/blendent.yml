@@ -1,0 +1,35 @@
+- site: Colormind
+  url: http://colormind.io/
+  desc: the AI powered color palette generator
+  image: links/webstack/logo/colormind.png
+  color: "#191919"
+
+- site: Khroma
+  url: http://khroma.co/train/
+  desc: The AI color tool for designers
+  image: links/webstack/logo/khroma.png
+  color: "#383346"
+
+- site: Coolors
+  url: https://coolors.co/
+  desc: The super fast color schemes generator
+  image: links/webstack/logo/coolors.png
+  color: "#0083fe"
+
+- site: flatuicolorpicker
+  url: http://www.flatuicolorpicker.com/
+  desc: Best Flat Colors UI Design
+  image: links/webstack/logo/flatuicolorpicker.png
+  color: "#8f45ae"
+
+- site: Color Hunt
+  url: https://colorhunt.co/
+  desc: Color Palettes for Designers and Artists
+  image: links/webstack/logo/colorhunt.png
+  color: "#f37121"
+
+- site: ColorDrop
+  url: https://colordrop.io/
+  desc: Palettes for use in your products
+  image: links/webstack/logo/colordrop.png
+  color: "#da532c"

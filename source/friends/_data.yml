@@ -1,0 +1,20 @@
+- site: 優萌初華
+  owner: 霜月琉璃
+  url: https://shoka.lostyu.me
+  desc: 琉璃的医学 & 编程笔记
+  image: https://fastly.jsdelivr.net/gh/amehime/shoka@latest/images/avatar.jpg
+  color: "#ed6ea0"
+
+- site: 灵香轩
+  owner: Lavender
+  url: https://www.lavenderdh.cn/
+  desc: 浩瀚众星，皆降为尘
+  image: https://www.lavenderdh.cn/images/avatar.png
+  color: "#8A2BE2"
+
+- site: 望月阁
+  owner: Kaitaku
+  url: https://www.kaitaku.xyz
+  desc: 一个萌新的学习笔记
+  image: https://www.kaitaku.xyz/images/avatar.jpg
+  color: "#00BFFF"
