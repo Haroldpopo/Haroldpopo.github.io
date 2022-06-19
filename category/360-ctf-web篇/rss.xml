@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Harold • Posts by &#34;360-ctf-web篇&#34; category</title>
+        <link>https://haroldpopo.github.io</link>
+        <description>我踏清风寻杨柳，谁有龙虾谁有酒。清风深知杨柳意，啤酒龙虾又相聚。</description>
+        <language>en</language>
+        <pubDate>Thu, 15 Apr 2021 16:28:53 +0800</pubDate>
+        <lastBuildDate>Thu, 15 Apr 2021 16:28:53 +0800</lastBuildDate>
+        <category>Git</category>
+        <category>Java</category>
+        <category>CTF</category>
+        <category>Kali</category>
+        <item>
+            <guid isPermalink="true">https://haroldpopo.github.io/360-SecLab/CTF-Web/web-03/</guid>
+            <title>CTF-Web-03</title>
+            <link>https://haroldpopo.github.io/360-SecLab/CTF-Web/web-03/</link>
+            <category>CTF</category>
+            <pubDate>Thu, 15 Apr 2021 16:28:53 +0800</pubDate>
+            <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;360CTF 实训平台：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzE3Mi4xOC4yNS41NQ==&#34;&gt;http://172.18.25.55&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;仅限内网访问&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;360-seclab-web-03&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#360-seclab-web-03&#34;&gt;#&lt;/a&gt; 360-SecLab-Web-03&lt;/h1&gt;
+&lt;h2 id=&#34;捡到银行卡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#捡到银行卡&#34;&gt;#&lt;/a&gt; 捡到银行卡&lt;/h2&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目描述&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h3&gt;
+&lt;p&gt;使用 burp 爆破密码&lt;/p&gt;
+&lt;p&gt;题目网址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwLjIuMC4zLzIyLw==&#34;&gt;http://10.2.0.3/22/&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;write-up&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#write-up&#34;&gt;#&lt;/a&gt; Write-up&lt;/h3&gt;
+&lt;p&gt;密码是银行卡密码，那么密码就是 6 位纯数字的密码，我们用 Burpsuite 爆破一下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;先设置代理为 &lt;code&gt;127.0.0.1:8080&lt;/code&gt; ，这里以 Firefox 浏览器为例&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/u8Z4xx.png&#34; alt=&#34;127.0.0.1:8080&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;启动 Burpsuite，在网页先随便输入一个密码，点确定提交，Burpsuite 抓到数据，在 &lt;code&gt;Proxy&lt;/code&gt;  下显示抓包信息&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/DzbYmd.png&#34; alt=&#34;test&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可以看到输入的密码为 6 个 1，点击 &lt;code&gt;Action&lt;/code&gt; --&amp;gt; &lt;code&gt;Send Intruder&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/EZH6Me.png&#34; alt=&#34;Send Intruder&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Intruder&lt;/code&gt;  下的 &lt;code&gt;Target&lt;/code&gt;  是攻击目标， &lt;code&gt;Positions&lt;/code&gt;  是攻击方式，这里默认就好，选中 &lt;code&gt;Submit=&lt;/code&gt;  后一对 &lt;code&gt;§&lt;/code&gt;  括起来的字符串，点击右侧的 &lt;code&gt;Clear§&lt;/code&gt;  按钮&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/fWaZy6.png&#34; alt=&#34;Intruder_Positions&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;只留下一个 &lt;code&gt;password=&lt;/code&gt;  后面带有 &lt;code&gt;§&lt;/code&gt;  标记的，这个标记括起来的当作变量一会进行爆破&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/5YbdRM.png&#34; alt=&#34;Clear§&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切换到 &lt;code&gt;Payloads&lt;/code&gt; ，修改密码参数，密码 6 位建议从中间 500000 开始&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/mNnOVq.png&#34; alt=&#34;set_payloads&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切换到 &lt;code&gt;Options&lt;/code&gt; ，可以修改线程数，默认是 5 线程，我这里设置 20 线程，线程设置当然不是说越多越好，经过测试我的电脑 20 线程是最佳，然后点击 &lt;code&gt;Start attack&lt;/code&gt;  开始爆破&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/tr1oXL.png&#34; alt=&#34;payload_threads&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;看返回的 &lt;code&gt;Length&lt;/code&gt;  不一样的，最大的那个就是密码&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/nOvk0K.png&#34; alt=&#34;passwd_result&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;关闭 Burpsuite 或者代理，输入爆破出来的密码，得到 flag&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/KAMDcY.png&#34; alt=&#34;result&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;找找看看&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#找找看看&#34;&gt;#&lt;/a&gt; 找找看看&lt;/h2&gt;
+&lt;h3 id=&#34;题目描述-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目描述-2&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h3&gt;
+&lt;p&gt;看 url，先下载图片 winhex 打开 url 解密得到，在源码中还有 url 解密，可以看到是百度网盘的分享码，得到 flag&lt;/p&gt;
+&lt;p&gt;题目网址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwLjIuMC4zLzIzLw==&#34;&gt;http://10.2.0.3/23/&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;write-up-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#write-up-2&#34;&gt;#&lt;/a&gt; Write-up&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;根据提示先下载图片用 winhex 打开，寻找类似 url 编码的东西，拉到最底&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/SkBbuy.png&#34; alt=&#34;found_urlencode&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;复制下来去 url 解码，得到一个百度网盘链接，再看提示，源码里也有 url 解密，得到网盘分享密码&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/I7vvT5.png&#34; alt=&#34;passwd_urldecode&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入密码打开网盘分享链接，得到 flag 文件，下载下来即拿到 flag&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/Nzna45.png&#34; alt=&#34;result&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;只能上传图片&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#只能上传图片&#34;&gt;#&lt;/a&gt; 只能上传图片&lt;/h2&gt;
+&lt;h3 id=&#34;题目描述-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目描述-3&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h3&gt;
+&lt;p&gt;php 进行上传限制，绕过黑名单&lt;/p&gt;
+&lt;p&gt;题目网址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwLjIuMC4zLzI0Lw==&#34;&gt;http://10.2.0.3/24/&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;write-up-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#write-up-3&#34;&gt;#&lt;/a&gt; Write-up&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;先随便上传一个 php 文件试试&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/HiGmUl.png&#34; alt=&#34;test&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;弹出提示，显示的文件后缀的文件都不能上传&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/tV7aUI.png&#34; alt=&#34;warn_tip&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;把 PHP 文件的后缀改成 &lt;code&gt;.pHp&lt;/code&gt; ，再上传试试？&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/T0qYNu.png&#34; alt=&#34;result&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;黑名单限制文件后缀的大小写不敏感，成功拿到 flag&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://haroldpopo.github.io/360-SecLab/CTF-Web/web-02/</guid>
+            <title>CTF-Web-02</title>
+            <link>https://haroldpopo.github.io/360-SecLab/CTF-Web/web-02/</link>
+            <category>CTF</category>
+            <pubDate>Tue, 13 Apr 2021 21:45:54 +0800</pubDate>
+            <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;360CTF 实训平台：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzE3Mi4xOC4yNS41NQ==&#34;&gt;http://172.18.25.55&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;仅限内网访问&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;360-seclab-web-02&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#360-seclab-web-02&#34;&gt;#&lt;/a&gt; 360-SecLab-Web-02&lt;/h1&gt;
+&lt;h2 id=&#34;文件上传&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件上传&#34;&gt;#&lt;/a&gt; 文件上传&lt;/h2&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目描述&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h3&gt;
+&lt;p&gt;web 代码修改上传验证&lt;/p&gt;
+&lt;p&gt;题目网址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwLjIuMC4xOC8xNy8=&#34;&gt;http://10.2.0.18/17/&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;write-up&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#write-up&#34;&gt;#&lt;/a&gt; Write-up&lt;/h3&gt;
+&lt;p&gt;提示是 web 代码修改上传验证，题目应该是浏览器端的上传检测漏洞，先右键查看源码&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;发现提交表单数据时有一个检测函数&lt;/p&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;check&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;switch&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getElementById&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;file1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;value&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;substring&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getElementById&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;file1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;value&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;lastIndexOf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;.&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;document&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getElementById&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;file1&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;length&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;case&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;jpg&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;case&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;gif&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;alert&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;文件格式不支持！&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;script&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;上传检测方案是在客户端使用 js 对不合法图片进行检查，很容易在前端对 js 脚本操作使其无效从而绕过&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;此为浏览器端的上传检测漏洞，在上传前把过滤函数 &lt;code&gt;check()&lt;/code&gt;  删除即可实现检测绕过，直接把 &lt;code&gt;return check()&lt;/code&gt;  删除就行&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/UT4Em3.png&#34; alt=&#34;code&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后随便上传一个 php 文件，上传成功即出现 key&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/t9wvNz.png&#34; alt=&#34;result&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;css-or-xss&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#css-or-xss&#34;&gt;#&lt;/a&gt; CSS OR XSS&lt;/h2&gt;
+&lt;h3 id=&#34;题目描述-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目描述-2&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h3&gt;
+&lt;p&gt;源代码查看 xss 文件内容解析&lt;/p&gt;
+&lt;p&gt;题目网址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwLjIuMC4zLzE5Lw==&#34;&gt;http://10.2.0.3/19/&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;write-up-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#write-up-2&#34;&gt;#&lt;/a&gt; Write-up&lt;/h3&gt;
+&lt;p&gt;题目提示是查看 xss 文件，又有 css，那就找一下 css 样式表看看&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/m6aSQc.png&#34; alt=&#34;css&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;你抓住了吗&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#你抓住了吗&#34;&gt;#&lt;/a&gt; 你抓住了吗？&lt;/h2&gt;
+&lt;h3 id=&#34;题目描述-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目描述-3&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h3&gt;
+&lt;p&gt;浏览器默认开启 JavaScript 挡住了 flag&lt;/p&gt;
+&lt;p&gt;题目网址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwLjIuMC4zLzIx&#34;&gt;http://10.2.0.3/21&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;write-up-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#write-up-3&#34;&gt;#&lt;/a&gt; Write-up&lt;/h3&gt;
+&lt;p&gt;根据提示关闭浏览器默认开启的 JavaScript 即可，但是好像又行不通了？？？&lt;/p&gt;
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_0&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_0&#34;&gt; 暂未复现&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://haroldpopo.github.io/360-SecLab/CTF-Web/web-01/</guid>
+            <title>CTF-Web-01</title>
+            <link>https://haroldpopo.github.io/360-SecLab/CTF-Web/web-01/</link>
+            <category>CTF</category>
+            <pubDate>Mon, 12 Apr 2021 21:45:37 +0800</pubDate>
+            <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;360CTF 实训平台：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzE3Mi4xOC4yNS41NQ==&#34;&gt;http://172.18.25.55&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;仅限内网访问&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;360-seclab-web-01&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#360-seclab-web-01&#34;&gt;#&lt;/a&gt; 360-SecLab-Web-01&lt;/h1&gt;
+&lt;h2 id=&#34;菜刀的相册&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#菜刀的相册&#34;&gt;#&lt;/a&gt; 菜刀的相册&lt;/h2&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目描述&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h3&gt;
+&lt;p&gt;进入题目页面，发现与上面 MySQL 一样，同样是通过 $_GET [id] 传参&lt;/p&gt;
+&lt;p&gt;题目网址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwLjIuMC4xOC83Lw==&#34;&gt;http://10.2.0.18/7/&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;write-up&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#write-up&#34;&gt;#&lt;/a&gt; Write-up&lt;/h3&gt;
+&lt;p class=&#34;primary&#34;&gt;&lt;/p&gt;
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_0&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_0&#34;&gt; 未完成&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;MySQL 注入，暂时没有成功，各位可以自行尝试一下&lt;/p&gt;
+&lt;h2 id=&#34;这是黑阔们经常干的事&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#这是黑阔们经常干的事&#34;&gt;#&lt;/a&gt; 这是黑阔们经常干的事&lt;/h2&gt;
+&lt;h3 id=&#34;题目描述-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目描述-2&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h3&gt;
+&lt;p&gt;本题考察的是 windows 下 cmd 相关命令的使用。&lt;/p&gt;
+&lt;p&gt;题目网址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwLjIuMC4xOC84L2luZGV4LmFzcA==&#34;&gt;http://10.2.0.18/8/index.asp&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;write-up-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#write-up-2&#34;&gt;#&lt;/a&gt; Write-up&lt;/h3&gt;
+&lt;p&gt;这是菜刀大牛的服务器的 cmdshell，而且还是 system 权限，不信你可以输入 whoami 试试&lt;/p&gt;
+&lt;p&gt;据调查，他服务器的系统是 Windows 系统，请你添加一个管理员用户！&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 添加管理员账户 lalala，密码 123456&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;net user lalala &lt;span class=&#34;token number&#34;&gt;123456&lt;/span&gt; /add&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 将用户 lalala 提升为管理员用户&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;net localgroup administrators lalala /add&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;用刚创建的账号密码&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwLjIuMC4xOC84L2NoZWNrLmFzcA==&#34;&gt;登录 http://10.2.0.18/8/check.asp&lt;/span&gt;，获取 key&lt;/p&gt;
+&lt;h2 id=&#34;老规矩你懂的&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#老规矩你懂的&#34;&gt;#&lt;/a&gt; 老规矩，你懂的&lt;/h2&gt;
+&lt;h3 id=&#34;题目描述-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目描述-3&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h3&gt;
+&lt;p&gt;简单的 web 代码隐藏 key 的题目。&lt;/p&gt;
+&lt;p&gt;题目网址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEwLjIuMC4zLzE0Lw==&#34;&gt;http://10.2.0.3/14/&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;write-up-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#write-up-3&#34;&gt;#&lt;/a&gt; Write-up&lt;/h3&gt;
+&lt;p&gt;浏览器打开题目地址，按 F12 查看源码，这不就是吗。。。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.vgy.me/18H3CR.png&#34; alt=&#34;key&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

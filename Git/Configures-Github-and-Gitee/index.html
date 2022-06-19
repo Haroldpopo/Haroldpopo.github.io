@@ -1,0 +1,648 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Harold" href="https://haroldpopo.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Harold" href="https://haroldpopo.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Harold" href="https://haroldpopo.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Git" />
+
+
+<link rel="canonical" href="https://haroldpopo.github.io/Git/Configures-Github-and-Gitee/">
+
+
+
+  <title>
+Git同时配置Github和Gitee - Git |
+Harold's Blog = Harold = Study Notes</title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Git同时配置Github和Gitee
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-06-01 13:05:26">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-06-01T13:05:26+08:00">2021-06-01</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>2.2k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>2 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Harold's Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclil3m4ej20zk0m8tn8.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciusoyjnj219g0u0x56.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Git/" itemprop="item" rel="index" title="In Git"><span itemprop="name">Git</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="https://haroldpopo.github.io/Git/Configures-Github-and-Gitee/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Harold">
+    <meta itemprop="description" content="Study Notes, 我踏清风寻杨柳，谁有龙虾谁有酒。清风深知杨柳意，啤酒龙虾又相聚。">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Harold">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="git同时配置github和gitee"><a class="anchor" href="#git同时配置github和gitee">#</a> Git 同时配置 Github 和 Gitee</h1>
+<h2 id="配置"><a class="anchor" href="#配置">#</a> 配置</h2>
+<h3 id="清除全局配置"><a class="anchor" href="#清除全局配置">#</a> 清除全局配置</h3>
+<ul>
+<li>查看是否设置过全局配置</li>
+</ul>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>$ <span class="token function">git</span> config --global --list</pre></td></tr></table></figure><ul>
+<li>清除全局配置（如果无可跳过）</li>
+</ul>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>$ <span class="token function">git</span> config --global --unset user.name <span class="token string">"Your Name"</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> config --global --unset user.email You@example.com</pre></td></tr></table></figure><h3 id="创建ssh公钥"><a class="anchor" href="#创建ssh公钥">#</a> 创建 ssh 公钥</h3>
+<p><code>ssh-keygen</code>  说明</p>
+<ul>
+<li>参数 <code>-t</code> ：公钥类型，如<strong> rsa</strong>、<strong>dss</strong></li>
+<li>参数 <code>-C</code> ：注释，为了添加一个可辨认的标识，以便识别</li>
+<li>参数 <code>-f</code> ：公钥保存文件路径，及文件名可自行取名，如 <code>-t</code>  为<strong> rsa</strong> 则公钥保存文件默认为<strong> id_rsa</strong></li>
+</ul>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>$ ssh-keygen -t rsa -C <span class="token string">"xxx@qq.com"</span> -f ~/.ssh/github_id_rsa</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment"># 接下来提示设置密码，无需设置密码，直接回车</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>$ ssh-keygen -t rsa -C <span class="token string">"xxx@qq.com"</span> -f ~/.ssh/gitee_id_rsa</pre></td></tr></table></figure><p><em><strong>如没有反应，可能没有添加环境变量</strong></em>，添加环境变量 <code>Git安装目录/usr/bin</code></p>
+<p>在 <code>~/.ssh/</code>  目录下生成以下文件</p>
+<ul>
+<li><code>github_id_rsa</code></li>
+<li><code>github_id_rsa.pub</code></li>
+<li><code>gitee_id_rsa</code></li>
+<li><code>gitee_id_rsa.pub</code></li>
+</ul>
+<h3 id="识别ssh-key新的密钥"><a class="anchor" href="#识别ssh-key新的密钥">#</a> 识别 SSH key 新的密钥</h3>
+<p>默认只读取  <code>id_rsa</code> ，为了让 SSH 识别新的私钥，需要将新的私钥加入到  <code>SSH agent</code>  中</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>$ ssh-agent <span class="token function">bash</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ ssh-add ~/.ssh/github_id_rsa</pre></td></tr><tr><td data-num="3"></td><td><pre>$ ssh-add ~/.ssh/gitee_id_rsa</pre></td></tr></table></figure><h3 id="多账号配置config文件"><a class="anchor" href="#多账号配置config文件">#</a> 多账号配置 config 文件</h3>
+<p>1、创建 config 文件</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>$ <span class="token function">touch</span> ~/.ssh/config</pre></td></tr></table></figure><p>2、config 中填写的内容，可用 vim 编辑器</p>
+<figure class="highlight bash"><figcaption data-lang="bash"><span>Git</span></figcaption><table><tr><td data-num="1"></td><td data-command="$"></td><td><pre><span class="token function">vim</span> ~/.ssh/config</pre></td></tr><tr><td data-num="2"></td><td data-command=""></td><td><pre><span class="token comment"># Gitee</span></pre></td></tr><tr><td data-num="3"></td><td data-command=""></td><td><pre>Host gitee.com</pre></td></tr><tr><td data-num="4"></td><td data-command=""></td><td><pre>    HostName gitee.com</pre></td></tr><tr><td data-num="5"></td><td data-command=""></td><td><pre>    PreferredAuthentications publickey</pre></td></tr><tr><td data-num="6"></td><td data-command=""></td><td><pre>    IdentityFile ~/.ssh/gitee_id_rsa</pre></td></tr><tr><td data-num="7"></td><td data-command=""></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td data-command=""></td><td><pre><span class="token comment"># GitHub</span></pre></td></tr><tr><td data-num="9"></td><td data-command=""></td><td><pre>Host github.com</pre></td></tr><tr><td data-num="10"></td><td data-command=""></td><td><pre>    HostName github.com</pre></td></tr><tr><td data-num="11"></td><td data-command=""></td><td><pre>    PreferredAuthentications publickey</pre></td></tr><tr><td data-num="12"></td><td data-command=""></td><td><pre>    IdentityFile ~/.ssh/github_id_rsa</pre></td></tr></table></figure><h3 id="添加ssh"><a class="anchor" href="#添加ssh">#</a> 添加 ssh</h3>
+<ul>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NldHRpbmdzL2tleXM=">https://github.com/settings/keys</span>，将  <code>github_id_rsa.pub</code>  中的内容填进去，起名的话随意。</p>
+</li>
+<li>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20vcHJvZmlsZS9zc2hrZXlz">https://gitee.com/profile/sshkeys</span>，将  <code>gitee_id_rsa.pub</code>  中的内容填进去，起名的话随意。</p>
+</li>
+</ul>
+<h3 id="测试ssh连接"><a class="anchor" href="#测试ssh连接">#</a> 测试 ssh 连接</h3>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>$ <span class="token function">ssh</span> -T git@github.com</pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">ssh</span> -T git@gitee.com</pre></td></tr></table></figure><p>第一次连接会提示输入 <code>yes/no</code> ，输入 <code>yes</code>  即可</p>
+<h2 id="不同平台共用一个本地仓库"><a class="anchor" href="#不同平台共用一个本地仓库">#</a> 不同平台共用一个本地仓库</h2>
+<h3 id="关联远程仓库"><a class="anchor" href="#关联远程仓库">#</a> 关联远程仓库</h3>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># Gitee</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> remote <span class="token function">add</span> gitee git@gitee.com:xxx/xxx.git</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment"># Github</span></pre></td></tr><tr><td data-num="5"></td><td><pre>$ <span class="token function">git</span> remote <span class="token function">add</span> github git@github.com:xxx/xxx.git</pre></td></tr></table></figure><figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># example</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> remote <span class="token function">add</span> github git@github.com:Haroldpopo/Blog.git</pre></td></tr><tr><td data-num="3"></td><td><pre>$ <span class="token function">git</span> remote <span class="token function">add</span> gitee git@gitee.com:Harold_popo/Harold_popo.git</pre></td></tr></table></figure><h3 id="推送远程仓库"><a class="anchor" href="#推送远程仓库">#</a> 推送远程仓库</h3>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 先 pull 拉取远程仓库的文件更新到本地仓库</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> pull gitee master</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment"># 如果出现！[rejected] master -> master (non-fast-forward) error:failed to push some refs to XXX，则</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token comment"># git pull gitee master --allow-unrelated-histories</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token comment"># Gitee</span></pre></td></tr><tr><td data-num="8"></td><td><pre>$ <span class="token function">git</span> push gitee master</pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token comment"># Github</span></pre></td></tr><tr><td data-num="11"></td><td><pre>$ <span class="token function">git</span> push github master</pre></td></tr></table></figure><h3 id="提交代码仍需用户名-邮箱"><a class="anchor" href="#提交代码仍需用户名-邮箱">#</a> 提交代码仍需用户名、邮箱</h3>
+<p>多平台账号下全局配置已清除，提交代码如果还需要我们的用户名、邮箱</p>
+<p>在我们的工作目录（项目）里配置即可：</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># Github</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> config user.name <span class="token string">'Haroldpopo'</span></pre></td></tr><tr><td data-num="3"></td><td><pre>$ <span class="token function">git</span> config user.email <span class="token number">2417525822</span>@qq.com</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token comment"># Gitee</span></pre></td></tr><tr><td data-num="6"></td><td><pre>$ <span class="token function">git</span> config user.name <span class="token string">'Harold'</span></pre></td></tr><tr><td data-num="7"></td><td><pre>$ <span class="token function">git</span> config user.email <span class="token number">2417525822</span>@qq.com</pre></td></tr></table></figure><p><img data-src="https://i.vgy.me/WEgGEr.png" alt="vgy.me" /></p>
+<h3 id="使用流程"><a class="anchor" href="#使用流程">#</a> 使用流程</h3>
+<p>以 Gitee 的 Harold_popo/Harold_popo.git 为例</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment"># 初始化当前仓库</span></pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token function">git</span> init</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment"># 当前工作目录（项目）创建用户名、邮箱</span></pre></td></tr><tr><td data-num="5"></td><td><pre>$ <span class="token function">git</span> config user.name <span class="token string">"Harold"</span></pre></td></tr><tr><td data-num="6"></td><td><pre>$ <span class="token function">git</span> config user.email <span class="token number">2417525822</span>@qq.com</pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token comment"># 关联远程仓库</span></pre></td></tr><tr><td data-num="9"></td><td><pre>$ <span class="token function">git</span> remote <span class="token function">add</span> gitee git@gitee.com:Harold_popo/Harold_popo.git</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token comment"># 同步远程仓库到本地仓库</span></pre></td></tr><tr><td data-num="12"></td><td><pre>$ <span class="token function">git</span> pull gitee master</pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token comment"># git pull gitee master --allow-unrelated-histories</span></pre></td></tr><tr><td data-num="14"></td><td><pre></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token comment"># 查看所有分支</span></pre></td></tr><tr><td data-num="16"></td><td><pre>$ <span class="token function">git</span> branch -a</pre></td></tr><tr><td data-num="17"></td><td><pre></pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token comment"># 查看缓存区状态</span></pre></td></tr><tr><td data-num="19"></td><td><pre>$ <span class="token function">git</span> status <span class="token builtin class-name">.</span></pre></td></tr><tr><td data-num="20"></td><td><pre></pre></td></tr><tr><td data-num="21"></td><td><pre><span class="token comment"># 将所有已添加、已删除或已修改文件添加至缓存区</span></pre></td></tr><tr><td data-num="22"></td><td><pre>$ <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span></pre></td></tr><tr><td data-num="23"></td><td><pre></pre></td></tr><tr><td data-num="24"></td><td><pre><span class="token comment"># 发送提交信息</span></pre></td></tr><tr><td data-num="25"></td><td><pre>$ <span class="token function">git</span> commit -m <span class="token string">"commit test"</span></pre></td></tr><tr><td data-num="26"></td><td><pre></pre></td></tr><tr><td data-num="27"></td><td><pre><span class="token comment"># 推送到远程仓库</span></pre></td></tr><tr><td data-num="28"></td><td><pre>$ <span class="token function">git</span> push gitee master</pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/Git/" rel="tag"><i class="ic i-tag"></i> Git</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2022-06-05 23:16:03" itemprop="dateModified" datetime="2022-06-05T23:16:03+08:00">2022-06-05</time>
+  </span>
+  <span id="Git/Configures-Github-and-Gitee/" class="item leancloud_visitors" data-flag-title="Git同时配置Github和Gitee" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Harold WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="Harold Alipay">
+        <p>Alipay</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Harold <i class="ic i-at"><em>@</em></i>Harold
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="https://haroldpopo.github.io/Git/Configures-Github-and-Gitee/" title="Git同时配置Github和Gitee">https://haroldpopo.github.io/Git/Configures-Github-and-Gitee/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/Git/Common-Commands/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexoj0moj20zk0m8kgu.jpg" title="Git常用命令">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> Git</span>
+  <h3>Git常用命令</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/hello-world/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph4fomxoj20zk0m8axp.jpg" title="Hello World">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>Hello World</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEgithub%E5%92%8Cgitee"><span class="toc-number">1.</span> <span class="toc-text"> Git 同时配置 Github 和 Gitee</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text"> 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 清除全局配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAssh%E5%85%AC%E9%92%A5"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 创建 ssh 公钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%86%E5%88%ABssh-key%E6%96%B0%E7%9A%84%E5%AF%86%E9%92%A5"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 识别 SSH key 新的密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%B4%A6%E5%8F%B7%E9%85%8D%E7%BD%AEconfig%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 多账号配置 config 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0ssh"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 添加 ssh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95ssh%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 测试 ssh 连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%B9%B3%E5%8F%B0%E5%85%B1%E7%94%A8%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.</span> <span class="toc-text"> 不同平台共用一个本地仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 关联远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 推送远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E4%BB%8D%E9%9C%80%E7%94%A8%E6%88%B7%E5%90%8D-%E9%82%AE%E7%AE%B1"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 提交代码仍需用户名、邮箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 使用流程</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/Git/Commit-Flow/" rel="bookmark" title="Git提交流程">Git提交流程</a></li><li><a href="/Git/Common-Commands/" rel="bookmark" title="Git常用命令">Git常用命令</a></li><li class="active"><a href="/Git/Configures-Github-and-Gitee/" rel="bookmark" title="Git同时配置Github和Gitee">Git同时配置Github和Gitee</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Harold"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Harold</p>
+  <div class="description" itemprop="description">我踏清风寻杨柳，谁有龙虾谁有酒。清风深知杨柳意，啤酒龙虾又相聚。</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">18</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">8</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item facebook" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2hhcm9sZC5wb3BvLmxvdmU=" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;harold.popo.love"><i class="ic i-facebook"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS81VDBVVVJCVXk5SWN5enY=" title="https:&#x2F;&#x2F;twitter.com&#x2F;5T0UURBUy9Icyzv"><i class="ic i-twitter"></i></span>
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0hhcm9sZHBvcG8=" title="https:&#x2F;&#x2F;github.com&#x2F;Haroldpopo"><i class="ic i-github"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS82NjMzNDAxOTkz" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;6633401993"><i class="ic i-weibo"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOjI0MTc1MjU4MjJAcXEuY29t" title="mailto:2417525822@qq.com"><i class="ic i-envelope"></i></span>
+      <a href="https://haroldpopo.github.io/about" title="https:&#x2F;&#x2F;haroldpopo.github.io&#x2F;about" class="item about"><i class="ic i-address-card"></i></a>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>Friends</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-magic"></i>Links</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/links/webstack" rel="section"><i class="ic i-star"></i>Webstack</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/links/ctf-tools" rel="section"><i class="ic i-paper-plane"></i>CTF-Tools</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/statistics" rel="section"><i class="ic i-clock"></i>Statistics</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/Git/Common-Commands/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/hello-world/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/360-SecLab/CTF-Web/" title="In 360-CTF-Web篇">360-CTF-Web篇</a>
+</div>
+
+    <span><a href="/360-SecLab/CTF-Web/web-03/" title="CTF-Web-03">CTF-Web-03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/" title="In OWASP安全渗透实战">OWASP安全渗透实战</a>
+</div>
+
+    <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/permeable_env/" title="安全渗透环境准备">安全渗透环境准备</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/360-SecLab/CTF-Passwd/" title="In 360-CTF-密码学篇">360-CTF-密码学篇</a>
+</div>
+
+    <span><a href="/360-SecLab/CTF-Passwd/passwd-01/" title="CTF-Passwd-01">CTF-Passwd-01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/360-SecLab/CTF-Passwd/" title="In 360-CTF-密码学篇">360-CTF-密码学篇</a>
+</div>
+
+    <span><a href="/360-SecLab/CTF-Passwd/passwd-03/" title="CTF-Passwd-03">CTF-Passwd-03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Git/" title="In Git">Git</a>
+</div>
+
+    <span><a href="/Git/Common-Commands/" title="Git常用命令">Git常用命令</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/360-SecLab/CTF-Passwd/" title="In 360-CTF-密码学篇">360-CTF-密码学篇</a>
+</div>
+
+    <span><a href="/360-SecLab/CTF-Passwd/passwd-02/" title="CTF-Passwd-02">CTF-Passwd-02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" title="In 渗透工具使用">渗透工具使用</a>
+</div>
+
+    <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/" title="sqlmap工具使用">sqlmap工具使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Git/" title="In Git">Git</a>
+</div>
+
+    <span><a href="/Git/Configures-Github-and-Gitee/" title="Git同时配置Github和Gitee">Git同时配置Github和Gitee</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/" title="In OWASP安全渗透实战">OWASP安全渗透实战</a>
+</div>
+
+    <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_upload/" title="文件上传漏洞">文件上传漏洞</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Harold @ Harold's Blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="Symbols count total">37k words</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="Reading time total">33 mins.</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'Git/Configures-Github-and-Gitee/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//fastly.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js,npm/echarts@5.2.2/dist/echarts.min.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
