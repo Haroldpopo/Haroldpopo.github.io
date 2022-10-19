@@ -5,10 +5,11 @@
         <link>https://haroldpopo.github.io</link>
         <description>我踏清风寻杨柳，谁有龙虾谁有酒。清风深知杨柳意，啤酒龙虾又相聚。</description>
         <language>en</language>
-        <pubDate>Sat, 18 Jun 2022 11:16:43 +0800</pubDate>
-        <lastBuildDate>Sat, 18 Jun 2022 11:16:43 +0800</lastBuildDate>
-        <category>Git</category>
+        <pubDate>Wed, 03 Aug 2022 23:57:36 +0800</pubDate>
+        <lastBuildDate>Wed, 03 Aug 2022 23:57:36 +0800</lastBuildDate>
         <category>Java</category>
+        <category>Git</category>
+        <category>eNSP</category>
         <category>CTF</category>
         <category>Kali</category>
         <item>
@@ -16,7 +17,7 @@
             <title>sqlmap工具使用</title>
             <link>https://haroldpopo.github.io/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/</link>
             <category>Kali</category>
-            <pubDate>Sat, 18 Jun 2022 11:16:43 +0800</pubDate>
+            <pubDate>Wed, 03 Aug 2022 23:57:36 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;sqlmap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sqlmap&#34;&gt;#&lt;/a&gt; SQLMAP&lt;/h1&gt;
 &lt;h2 id=&#34;sqlmap简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#sqlmap简介&#34;&gt;#&lt;/a&gt; SQLMAP 简介&lt;/h2&gt;
 &lt;p&gt;sqlmap 是一款用来检测与利用 SQL 注入漏洞的免费开源工具，有一个非常棒的特性，即对检测与利用的自动化处理 (数据库指纹、访间底层文件系统、执行命令）。&lt;/p&gt;

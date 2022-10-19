@@ -5,10 +5,11 @@
         <link>https://haroldpopo.github.io</link>
         <description>我踏清风寻杨柳，谁有龙虾谁有酒。清风深知杨柳意，啤酒龙虾又相聚。</description>
         <language>en</language>
-        <pubDate>Sat, 18 Jun 2022 11:16:43 +0800</pubDate>
-        <lastBuildDate>Sat, 18 Jun 2022 11:16:43 +0800</lastBuildDate>
-        <category>Git</category>
+        <pubDate>Wed, 03 Aug 2022 23:57:36 +0800</pubDate>
+        <lastBuildDate>Wed, 03 Aug 2022 23:57:36 +0800</lastBuildDate>
         <category>Java</category>
+        <category>Git</category>
+        <category>eNSP</category>
         <category>CTF</category>
         <category>Kali</category>
         <item>
@@ -16,7 +17,7 @@
             <title>反射机制</title>
             <link>https://haroldpopo.github.io/Java/Reflect/</link>
             <category>Java</category>
-            <pubDate>Sat, 18 Jun 2022 11:16:43 +0800</pubDate>
+            <pubDate>Wed, 03 Aug 2022 23:57:36 +0800</pubDate>
             <description><![CDATA[ &lt;div class=&#34;note info&#34;&gt;
 &lt;p&gt;📖 Java 反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为 Java 语言的反射机制。&lt;/p&gt;
 &lt;/div&gt;
@@ -239,7 +240,7 @@
             <title>注解</title>
             <link>https://haroldpopo.github.io/Java/Annotation/</link>
             <category>Java</category>
-            <pubDate>Sat, 18 Jun 2022 11:16:43 +0800</pubDate>
+            <pubDate>Wed, 03 Aug 2022 23:57:36 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;注解&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#注解&#34;&gt;#&lt;/a&gt; 注解&lt;/h1&gt;
 &lt;div class=&#34;note info&#34;&gt;
 &lt;p&gt;注解（Annotation），也叫元数据。一种代码级别的说明。它是 JDK1.5 及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元秦进行说明，注释。&lt;/p&gt;
