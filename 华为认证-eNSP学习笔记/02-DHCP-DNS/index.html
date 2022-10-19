@@ -119,12 +119,12 @@ Harold's Blog = Harold = Study Notes</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicm07ih54j20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeu1usa7j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclip4jbpj20zk0m87cv.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
         </ul>
       </div>
     </header>
@@ -187,7 +187,7 @@ Harold's Blog = Harold = Study Notes</title>
 </li>
 </ol>
 <h2 id="配置dhcp"><a class="anchor" href="#配置dhcp">#</a> 配置 DHCP</h2>
-<figure class="highlight shell"><figcaption data-lang="Bash"><span>eNSP</span></figcaption><table><tr><td data-num="1"></td><td data-command="<Huawei>"></td><td><pre>system-view </pre></td></tr><tr><td data-num="2"></td><td data-command=""></td><td><pre>Enter system view, <span class="token builtin class-name">return</span> user view with Ctrl+Z.</pre></td></tr><tr><td data-num="3"></td><td data-command="[Huawei]"></td><td><pre>sysname Router</pre></td></tr><tr><td data-num="4"></td><td data-command="[Router]"></td><td><pre>interface GigabitEthernet <span class="token number">0</span>/0/0</pre></td></tr><tr><td data-num="5"></td><td data-command="[Router-GigabitEthernet0/0/0]"></td><td><pre><span class="token function">ip</span> address <span class="token number">192.168</span>.1.1 <span class="token number">255.255</span>.255.0</pre></td></tr><tr><td data-num="6"></td><td data-command=""></td><td><pre>Oct <span class="token number">18</span> <span class="token number">2022</span> <span class="token number">23</span>:29:30-08:00 Router %%01IFNET/4/LINK_STATE<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>:The line protocol</pre></td></tr><tr><td data-num="7"></td><td data-command=""></td><td><pre> IP on the interface GigabitEthernet0/0/0 has entered the UP state. </pre></td></tr><tr><td data-num="8"></td><td data-command="[Router-GigabitEthernet0/0/0]"></td><td><pre>quit</pre></td></tr><tr><td data-num="9"></td><td data-command="[Router]"></td><td><pre>dhcp <span class="token builtin class-name">enable</span></pre></td></tr><tr><td data-num="10"></td><td data-command=""></td><td><pre>Info: The operation may take a few seconds. Please <span class="token function">wait</span> <span class="token keyword">for</span> a moment.done.</pre></td></tr><tr><td data-num="11"></td><td data-command="[Router]"></td><td><pre>interface g0/0/0</pre></td></tr><tr><td data-num="12"></td><td data-command="[Router-GigabitEthernet0/0/0]"></td><td><pre>dhcp <span class="token keyword">select</span> interface</pre></td></tr><tr><td data-num="13"></td><td data-command="[Router-GigabitEthernet0/0/0]"></td><td><pre>quit</pre></td></tr></table></figure><h2 id="配置dns"><a class="anchor" href="#配置dns">#</a> 配置 DNS</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"><span>eNSP</span></figcaption><table><tr><td data-num="1"></td><td data-command="<Huawei>"></td><td><pre>system-view </pre></td></tr><tr><td data-num="2"></td><td data-command=""></td><td><pre>Enter system view, <span class="token builtin class-name">return</span> user view with Ctrl+Z.</pre></td></tr><tr><td data-num="3"></td><td data-command="[Huawei]"></td><td><pre>sysname Router</pre></td></tr><tr><td data-num="4"></td><td data-command="[Router]"></td><td><pre>interface GigabitEthernet <span class="token number">0</span>/0/0</pre></td></tr><tr><td data-num="5"></td><td data-command="[Router-GigabitEthernet0/0/0]"></td><td><pre><span class="token function">ip</span> address <span class="token number">192.168</span>.1.1 <span class="token number">255.255</span>.255.0</pre></td></tr><tr><td data-num="6"></td><td data-command=""></td><td><pre>Oct <span class="token number">18</span> <span class="token number">2022</span> <span class="token number">23</span>:29:30-08:00 Router %%01IFNET/4/LINK_STATE<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>:The line protocol IP on the interface GigabitEthernet0/0/0 has entered the UP state. </pre></td></tr><tr><td data-num="7"></td><td data-command="[Router-GigabitEthernet0/0/0]"></td><td><pre>quit</pre></td></tr><tr><td data-num="8"></td><td data-command="[Router]"></td><td><pre>dhcp <span class="token builtin class-name">enable</span></pre></td></tr><tr><td data-num="9"></td><td data-command=""></td><td><pre>Info: The operation may take a few seconds. Please <span class="token function">wait</span> <span class="token keyword">for</span> a moment.done.</pre></td></tr><tr><td data-num="10"></td><td data-command="[Router]"></td><td><pre>interface g0/0/0</pre></td></tr><tr><td data-num="11"></td><td data-command="[Router-GigabitEthernet0/0/0]"></td><td><pre>dhcp <span class="token keyword">select</span> interface</pre></td></tr><tr><td data-num="12"></td><td data-command="[Router-GigabitEthernet0/0/0]"></td><td><pre>quit</pre></td></tr></table></figure><h2 id="配置dns"><a class="anchor" href="#配置dns">#</a> 配置 DNS</h2>
 <figure class="highlight shell"><figcaption data-lang="Bash"><span>eNSP</span></figcaption><table><tr><td data-num="1"></td><td data-command="[Router]"></td><td><pre>interface g0/0/0</pre></td></tr><tr><td data-num="2"></td><td data-command="[Router-GigabitEthernet0/0/0]"></td><td><pre>dhcp server dns-list <span class="token number">192.168</span>.1.100</pre></td></tr><tr><td data-num="3"></td><td data-command="[Router-GigabitEthernet0/0/0]"></td><td><pre>quit</pre></td></tr></table></figure>
       <div class="tags">
           <a href="/tags/eNSP/" rel="tag"><i class="ic i-tag"></i> eNSP</a>
@@ -202,7 +202,7 @@ Harold's Blog = Harold = Study Notes</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2022-10-19 23:42:11" itemprop="dateModified" datetime="2022-10-19T23:42:11+08:00">2022-10-19</time>
+    <time title="Modified: 2022-10-20 00:03:26" itemprop="dateModified" datetime="2022-10-20T00:03:26+08:00">2022-10-20</time>
   </span>
   <span id="华为认证-eNSP学习笔记/02-DHCP-DNS/" class="item leancloud_visitors" data-flag-title="DHCP和DNS的配置" title="Views">
       <span class="icon">
@@ -260,7 +260,7 @@ Harold's Blog = Harold = Study Notes</title>
     <div class="item left">
       
 
-  <a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01-eNSP%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclize41wj20zk0m87gk.jpg" title="eNSP基本命令">
+  <a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01-eNSP%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexbei4hj20zk0m8npd.jpg" title="eNSP基本命令">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 华为认证 eNSP学习笔记</span>
   <h3>eNSP基本命令</h3>
@@ -270,7 +270,7 @@ Harold's Blog = Harold = Study Notes</title>
     <div class="item right">
       
 
-  <a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03-Static-Routing/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclxxcb6rj20zk0m8b29.jpg" title="静态路由">
+  <a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03-Static-Routing/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciuja1j1j20zk0m8kjl.jpg" title="静态路由">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 华为认证 eNSP学习笔记</span>
   <h3>静态路由</h3>
@@ -432,16 +432,6 @@ Harold's Blog = Harold = Study Notes</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/Git/" title="In Git">Git</a>
-</div>
-
-    <span><a href="/Git/Configures-Github-and-Gitee/" title="Git同时配置Github和Gitee">Git同时配置Github和Gitee</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 </div>
 
     <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
@@ -461,12 +451,20 @@ Harold's Blog = Harold = Study Notes</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/360-SecLab/CTF-Web/" title="In 360-CTF-Web篇">360-CTF-Web篇</a>
+<a href="/categories/Java/" title="In Java">Java</a>
 </div>
 
-    <span><a href="/360-SecLab/CTF-Web/web-03/" title="CTF-Web-03">CTF-Web-03</a></span>
+    <span><a href="/Java/Reflect/" title="反射机制">反射机制</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="In 华为认证 eNSP学习笔记">华为认证 eNSP学习笔记</a>
+</div>
+
+    <span><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02-DHCP-DNS/" title="DHCP和DNS的配置">DHCP和DNS的配置</a></span>
   </li>
 
       
@@ -485,46 +483,10 @@ Harold's Blog = Harold = Study Notes</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/360-SecLab/CTF-Passwd/" title="In 360-CTF-密码学篇">360-CTF-密码学篇</a>
+<a href="/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="In 华为认证 eNSP学习笔记">华为认证 eNSP学习笔记</a>
 </div>
 
-    <span><a href="/360-SecLab/CTF-Passwd/passwd-02/" title="CTF-Passwd-02">CTF-Passwd-02</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/Java/" title="In Java">Java</a>
-</div>
-
-    <span><a href="/Java/Annotation/" title="注解">注解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" title="In 渗透工具使用">渗透工具使用</a>
-</div>
-
-    <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/" title="sqlmap工具使用">sqlmap工具使用</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/360-SecLab/CTF-Web/" title="In 360-CTF-Web篇">360-CTF-Web篇</a>
-</div>
-
-    <span><a href="/360-SecLab/CTF-Web/web-02/" title="CTF-Web-02">CTF-Web-02</a></span>
+    <span><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03-Static-Routing/" title="静态路由">静态路由</a></span>
   </li>
 
       
@@ -537,6 +499,40 @@ Harold's Blog = Harold = Study Notes</title>
 </div>
 
     <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_upload/" title="文件上传漏洞">文件上传漏洞</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Git/" title="In Git">Git</a>
+</div>
+
+    <span><a href="/Git/Common-Commands/" title="Git常用命令">Git常用命令</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/360-SecLab/CTF-Passwd/" title="In 360-CTF-密码学篇">360-CTF-密码学篇</a>
+</div>
+
+    <span><a href="/360-SecLab/CTF-Passwd/passwd-03/" title="CTF-Passwd-03">CTF-Passwd-03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" title="In 渗透工具使用">渗透工具使用</a>
+</div>
+
+    <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/" title="sqlmap工具使用">sqlmap工具使用</a></span>
   </li>
 
   </ul>
@@ -561,13 +557,13 @@ Harold's Blog = Harold = Study Notes</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">40k words</span>
+    <span title="Symbols count total">41k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">36 mins.</span>
+    <span title="Reading time total">37 mins.</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
