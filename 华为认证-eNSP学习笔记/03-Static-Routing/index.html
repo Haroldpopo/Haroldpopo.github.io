@@ -78,7 +78,7 @@ Harold's Blog = Harold = Study Notes</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>1.6k</span>
+    <span>1k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -119,12 +119,12 @@ Harold's Blog = Harold = Study Notes</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipevo9j1jj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclj9410cj20zk0m8h12.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclfb3vzhj20zk0m8wny.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
         </ul>
       </div>
     </header>
@@ -172,10 +172,15 @@ Harold's Blog = Harold = Study Notes</title>
 
     <h1 id="静态路由"><a class="anchor" href="#静态路由">#</a> 静态路由</h1>
 <p><img data-src="https://i.vgy.me/2Lvn8J.png" alt="Case Routing Static" /></p>
-<h2 id="路由ar1配置"><a class="anchor" href="#路由ar1配置">#</a> 路由 <code>AR1</code>  配置</h2>
-<figure class="highlight shell"><figcaption data-lang="Bash"><span>eNSP</span></figcaption><table><tr><td data-num="1"></td><td data-command="<Huawei>"></td><td><pre>system-view </pre></td></tr><tr><td data-num="2"></td><td data-command=""></td><td><pre>Enter system view, <span class="token builtin class-name">return</span> user view with Ctrl+Z.</pre></td></tr><tr><td data-num="3"></td><td data-command="[Huawei]"></td><td><pre>sysname AR1</pre></td></tr><tr><td data-num="4"></td><td data-command="[AR1]"></td><td><pre>interface g0/0/0</pre></td></tr><tr><td data-num="5"></td><td data-command="[AR1-GigabitEthernet0/0/0]"></td><td><pre><span class="token function">ip</span> address <span class="token number">192.168</span>.1.10 <span class="token number">255.255</span>.255.0</pre></td></tr><tr><td data-num="6"></td><td data-command=""></td><td><pre>Oct <span class="token number">19</span> <span class="token number">2022</span> <span class="token number">22</span>:13:06-08:00 AR1 %%01IFNET/4/LINK_STATE<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>:The line protocol IP</pre></td></tr><tr><td data-num="7"></td><td data-command=""></td><td><pre> on the interface GigabitEthernet0/0/0 has entered the UP state. </pre></td></tr><tr><td data-num="8"></td><td data-command="[AR1-GigabitEthernet0/0/0]"></td><td><pre>interface g0/0/1</pre></td></tr><tr><td data-num="9"></td><td data-command="[AR1-GigabitEthernet0/0/1]"></td><td><pre><span class="token function">ip</span> address <span class="token number">192.168</span>.2.1 <span class="token number">255.255</span>.255.0</pre></td></tr><tr><td data-num="10"></td><td data-command=""></td><td><pre>Oct <span class="token number">19</span> <span class="token number">2022</span> <span class="token number">22</span>:13:27-08:00 AR1 %%01IFNET/4/LINK_STATE<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>:The line protocol IP</pre></td></tr><tr><td data-num="11"></td><td data-command=""></td><td><pre> on the interface GigabitEthernet0/0/1 has entered the UP state. </pre></td></tr><tr><td data-num="12"></td><td data-command="[AR1-GigabitEthernet0/0/0]"></td><td><pre>quit</pre></td></tr><tr><td data-num="13"></td><td data-command="[AR1]"></td><td><pre><span class="token function">ip</span> route-static <span class="token number">192.168</span>.3.0 <span class="token number">255.255</span>.255.0 <span class="token number">192.168</span>.2.10</pre></td></tr><tr><td data-num="14"></td><td data-command="[AR1]"></td><td><pre>display <span class="token function">ip</span> routing-table <span class="token number">192.168</span>.3.10</pre></td></tr><tr><td data-num="15"></td><td data-command=""></td><td><pre>Route Flags: R - relay, D - download to fib</pre></td></tr><tr><td data-num="16"></td><td data-command=""></td><td><pre>------------------------------------------------------------------------------</pre></td></tr><tr><td data-num="17"></td><td data-command=""></td><td><pre>Routing Table <span class="token builtin class-name">:</span> Public</pre></td></tr><tr><td data-num="18"></td><td data-command=""></td><td><pre>Summary Count <span class="token builtin class-name">:</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="19"></td><td data-command=""></td><td><pre>Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface</pre></td></tr><tr><td data-num="20"></td><td data-command=""></td><td><pre></pre></td></tr><tr><td data-num="21"></td><td data-command=""></td><td><pre>    <span class="token number">192.168</span>.3.0/24  Static  <span class="token number">60</span>   <span class="token number">0</span>          RD   <span class="token number">192.168</span>.2.10    GigabitEthernet0/0/1</pre></td></tr></table></figure><h2 id="路由ar2配置"><a class="anchor" href="#路由ar2配置">#</a> 路由 <code>AR2</code>  配置</h2>
-<figure class="highlight shell"><figcaption data-lang="Bash"><span>eNSP</span></figcaption><table><tr><td data-num="1"></td><td data-command="<Huawei>"></td><td><pre>system-view </pre></td></tr><tr><td data-num="2"></td><td data-command=""></td><td><pre>Enter system view, <span class="token builtin class-name">return</span> user view with Ctrl+Z.</pre></td></tr><tr><td data-num="3"></td><td data-command="[Huawei]"></td><td><pre>sysname AR2</pre></td></tr><tr><td data-num="4"></td><td data-command="[AR2]"></td><td><pre>interface g0/0/0</pre></td></tr><tr><td data-num="5"></td><td data-command="[AR2-GigabitEthernet0/0/0]"></td><td><pre><span class="token function">ip</span> address <span class="token number">192.168</span>.2.10 <span class="token number">255.255</span>.255.0</pre></td></tr><tr><td data-num="6"></td><td data-command=""></td><td><pre>Oct <span class="token number">19</span> <span class="token number">2022</span> <span class="token number">22</span>:16:37-08:00 AR2 %%01IFNET/4/LINK_STATE<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>:The line protocol IP</pre></td></tr><tr><td data-num="7"></td><td data-command=""></td><td><pre> on the interface GigabitEthernet0/0/0 has entered the UP state. </pre></td></tr><tr><td data-num="8"></td><td data-command="[AR2-GigabitEthernet0/0/0]"></td><td><pre>interface g0/0/1</pre></td></tr><tr><td data-num="9"></td><td data-command="[AR2-GigabitEthernet0/0/1]"></td><td><pre><span class="token function">ip</span> address <span class="token number">192.168</span>.3.1 <span class="token number">255.255</span>.255.0</pre></td></tr><tr><td data-num="10"></td><td data-command=""></td><td><pre>Oct <span class="token number">19</span> <span class="token number">2022</span> <span class="token number">22</span>:16:51-08:00 AR2 %%01IFNET/4/LINK_STATE<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>:The line protocol IP</pre></td></tr><tr><td data-num="11"></td><td data-command=""></td><td><pre> on the interface GigabitEthernet0/0/1 has entered the UP state. </pre></td></tr><tr><td data-num="12"></td><td data-command="[AR2-GigabitEthernet0/0/0]"></td><td><pre>quit</pre></td></tr><tr><td data-num="13"></td><td data-command="[AR2]"></td><td><pre><span class="token function">ip</span> route-static <span class="token number">192.168</span>.1.0 <span class="token number">255.255</span>.255.0 <span class="token number">192.168</span>.2.1</pre></td></tr><tr><td data-num="14"></td><td data-command="[AR2]"></td><td><pre>display <span class="token function">ip</span> routing-table <span class="token number">192.168</span>.1.1</pre></td></tr><tr><td data-num="15"></td><td data-command=""></td><td><pre>Route Flags: R - relay, D - download to fib</pre></td></tr><tr><td data-num="16"></td><td data-command=""></td><td><pre>------------------------------------------------------------------------------</pre></td></tr><tr><td data-num="17"></td><td data-command=""></td><td><pre>Routing Table <span class="token builtin class-name">:</span> Public</pre></td></tr><tr><td data-num="18"></td><td data-command=""></td><td><pre>Summary Count <span class="token builtin class-name">:</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="19"></td><td data-command=""></td><td><pre>Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface</pre></td></tr><tr><td data-num="20"></td><td data-command=""></td><td><pre></pre></td></tr><tr><td data-num="21"></td><td data-command=""></td><td><pre>    <span class="token number">192.168</span>.1.0/24  Static  <span class="token number">60</span>   <span class="token number">0</span>          RD   <span class="token number">192.168</span>.2.1     GigabitEthernet0/0/0</pre></td></tr></table></figure><h2 id="静态路由关键命令"><a class="anchor" href="#静态路由关键命令">#</a> 静态路由关键命令</h2>
+<h2 id="静态路由关键命令"><a class="anchor" href="#静态路由关键命令">#</a> 静态路由关键命令</h2>
+<p>路由器根据路由表转发数据</p>
 <p><code>ip route-static 目标网段 目标网段子网掩码 下一跳地址</code></p>
+<h2 id="路由ar1配置"><a class="anchor" href="#路由ar1配置">#</a> 路由 <code>AR1</code>  配置</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"><span>eNSP-AR1</span></figcaption><table><tr><td data-num="1"></td><td data-command="[AR1]"></td><td><pre>interface g0/0/0</pre></td></tr><tr><td data-num="2"></td><td data-command="[AR1-GigabitEthernet0/0/0]"></td><td><pre><span class="token function">ip</span> address <span class="token number">192.168</span>.1.10 <span class="token number">255.255</span>.255.0</pre></td></tr><tr><td data-num="3"></td><td data-command="[AR1-GigabitEthernet0/0/0]"></td><td><pre>interface g0/0/1</pre></td></tr><tr><td data-num="4"></td><td data-command="[AR1-GigabitEthernet0/0/1]"></td><td><pre><span class="token function">ip</span> address <span class="token number">192.168</span>.2.1 <span class="token number">255.255</span>.255.0</pre></td></tr><tr><td data-num="5"></td><td data-command="[AR1-GigabitEthernet0/0/1]"></td><td><pre>quit</pre></td></tr><tr><td data-num="6"></td><td data-command="[AR1]"></td><td><pre><span class="token function">ip</span> route-static <span class="token number">192.168</span>.3.0 <span class="token number">255.255</span>.255.0 <span class="token number">192.168</span>.2.10</pre></td></tr><tr><td data-num="7"></td><td data-command="[AR1]"></td><td><pre>display <span class="token function">ip</span> routing-table <span class="token number">192.168</span>.3.10</pre></td></tr><tr><td data-num="8"></td><td data-command=""></td><td><pre>Route Flags: R - relay, D - download to fib</pre></td></tr><tr><td data-num="9"></td><td data-command=""></td><td><pre>------------------------------------------------------------------------------</pre></td></tr><tr><td data-num="10"></td><td data-command=""></td><td><pre>Routing Table <span class="token builtin class-name">:</span> Public</pre></td></tr><tr><td data-num="11"></td><td data-command=""></td><td><pre>Summary Count <span class="token builtin class-name">:</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="12"></td><td data-command=""></td><td><pre>Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface</pre></td></tr><tr><td data-num="13"></td><td data-command=""></td><td><pre></pre></td></tr><tr><td data-num="14"></td><td data-command=""></td><td><pre>    <span class="token number">192.168</span>.3.0/24  Static  <span class="token number">60</span>   <span class="token number">0</span>          RD   <span class="token number">192.168</span>.2.10    GigabitEthernet0/0/1</pre></td></tr></table></figure><h2 id="路由ar2配置"><a class="anchor" href="#路由ar2配置">#</a> 路由 <code>AR2</code>  配置</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"><span>eNSP-AR2</span></figcaption><table><tr><td data-num="1"></td><td data-command="[AR2]"></td><td><pre>interface g0/0/0</pre></td></tr><tr><td data-num="2"></td><td data-command="[AR2-GigabitEthernet0/0/0]"></td><td><pre><span class="token function">ip</span> address <span class="token number">192.168</span>.2.10 <span class="token number">255.255</span>.255.0</pre></td></tr><tr><td data-num="3"></td><td data-command="[AR2-GigabitEthernet0/0/0]"></td><td><pre>interface g0/0/1</pre></td></tr><tr><td data-num="4"></td><td data-command="[AR2-GigabitEthernet0/0/1]"></td><td><pre><span class="token function">ip</span> address <span class="token number">192.168</span>.3.1 <span class="token number">255.255</span>.255.0</pre></td></tr><tr><td data-num="5"></td><td data-command="[AR2-GigabitEthernet0/0/1]"></td><td><pre>quit</pre></td></tr><tr><td data-num="6"></td><td data-command="[AR2]"></td><td><pre><span class="token function">ip</span> route-static <span class="token number">192.168</span>.1.0 <span class="token number">255.255</span>.255.0 <span class="token number">192.168</span>.2.1</pre></td></tr><tr><td data-num="7"></td><td data-command="[AR2]"></td><td><pre>display <span class="token function">ip</span> routing-table <span class="token number">192.168</span>.1.1</pre></td></tr><tr><td data-num="8"></td><td data-command=""></td><td><pre>Route Flags: R - relay, D - download to fib</pre></td></tr><tr><td data-num="9"></td><td data-command=""></td><td><pre>------------------------------------------------------------------------------</pre></td></tr><tr><td data-num="10"></td><td data-command=""></td><td><pre>Routing Table <span class="token builtin class-name">:</span> Public</pre></td></tr><tr><td data-num="11"></td><td data-command=""></td><td><pre>Summary Count <span class="token builtin class-name">:</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="12"></td><td data-command=""></td><td><pre>Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface</pre></td></tr><tr><td data-num="13"></td><td data-command=""></td><td><pre></pre></td></tr><tr><td data-num="14"></td><td data-command=""></td><td><pre>    <span class="token number">192.168</span>.1.0/24  Static  <span class="token number">60</span>   <span class="token number">0</span>          RD   <span class="token number">192.168</span>.2.1     GigabitEthernet0/0/0</pre></td></tr></table></figure><h2 id="tcpudp协议"><a class="anchor" href="#tcpudp协议">#</a> TCP/UDP 协议</h2>
+<p>TCP：可靠性高，适合对文件传输的完整性高，对延迟不敏感。</p>
+<p>UDP：速度快 ，缺点容易丢包。</p>
+<p>CDN：不同的访问，网站返回不同的 IP。</p>
 
       <div class="tags">
           <a href="/tags/eNSP/" rel="tag"><i class="ic i-tag"></i> eNSP</a>
@@ -190,7 +195,7 @@ Harold's Blog = Harold = Study Notes</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2022-10-19 23:17:08" itemprop="dateModified" datetime="2022-10-19T23:17:08+08:00">2022-10-19</time>
+    <time title="Modified: 2022-10-23 16:33:46" itemprop="dateModified" datetime="2022-10-23T16:33:46+08:00">2022-10-23</time>
   </span>
   <span id="华为认证-eNSP学习笔记/03-Static-Routing/" class="item leancloud_visitors" data-flag-title="静态路由" title="Views">
       <span class="icon">
@@ -248,7 +253,7 @@ Harold's Blog = Harold = Study Notes</title>
     <div class="item left">
       
 
-  <a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02-DHCP-DNS/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesx5fdwj20zk0m81kx.jpg" title="DHCP和DNS的配置">
+  <a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02-DHCP-DNS/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclh0m9pdj20zk0m8hdt.jpg" title="DHCP和DNS的配置">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 华为认证 eNSP学习笔记</span>
   <h3>DHCP和DNS的配置</h3>
@@ -256,6 +261,14 @@ Harold's Blog = Harold = Study Notes</title>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04-Vlan-Trunk/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexbei4hj20zk0m8npd.jpg" title="VLAN虚拟局域网">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 华为认证 eNSP学习笔记</span>
+  <h3>VLAN虚拟局域网</h3>
+  </a>
+
     </div>
 </div>
 
@@ -272,11 +285,11 @@ Harold's Blog = Harold = Study Notes</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">1.</span> <span class="toc-text"> 静态路由</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1ar1%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text"> 路由 AR1  配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1ar2%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text"> 路由 AR2  配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1%E5%85%B3%E9%94%AE%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text"> 静态路由关键命令</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">1.</span> <span class="toc-text"> 静态路由</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1%E5%85%B3%E9%94%AE%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text"> 静态路由关键命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1ar1%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text"> 路由 AR1  配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1ar2%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text"> 路由 AR2  配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcpudp%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.4.</span> <span class="toc-text"> TCP&#x2F;UDP 协议</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01-eNSP%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" rel="bookmark" title="eNSP基本命令">eNSP基本命令</a></li><li><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02-DHCP-DNS/" rel="bookmark" title="DHCP和DNS的配置">DHCP和DNS的配置</a></li><li class="active"><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03-Static-Routing/" rel="bookmark" title="静态路由">静态路由</a></li>
+          <li><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01-Basic-Use-Of-eNSP/" rel="bookmark" title="eNSP基本命令">eNSP基本命令</a></li><li><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02-DHCP-DNS/" rel="bookmark" title="DHCP和DNS的配置">DHCP和DNS的配置</a></li><li class="active"><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03-Static-Routing/" rel="bookmark" title="静态路由">静态路由</a></li><li><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04-Vlan-Trunk/" rel="bookmark" title="VLAN虚拟局域网">VLAN虚拟局域网</a></li><li><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/05-Three-layer-Switching-Technology/" rel="bookmark" title="三层交换技术">三层交换技术</a></li><li><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/06-Router-On-A-Stick/" rel="bookmark" title="单臂路由">单臂路由</a></li><li><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/07-Access-Control-Lists/" rel="bookmark" title="ACL访问控制列表">ACL访问控制列表</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -290,7 +303,7 @@ Harold's Blog = Harold = Study Notes</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">21</span>
+        <span class="count">25</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -385,10 +398,12 @@ Harold's Blog = Harold = Study Notes</title>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02-DHCP-DNS/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04-Vlan-Trunk/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -410,31 +425,20 @@ Harold's Blog = Harold = Study Notes</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/Git/" title="In Git">Git</a>
+<a href="/categories/Java/" title="In Java">Java</a>
 </div>
 
-    <span><a href="/Git/Configures-Github-and-Gitee/" title="Git同时配置Github和Gitee">Git同时配置Github和Gitee</a></span>
+    <span><a href="/Java/Annotation/" title="注解">注解</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="In 华为认证 eNSP学习笔记">华为认证 eNSP学习笔记</a>
 </div>
 
-    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/360-SecLab/CTF-Web/" title="In 360-CTF-Web篇">360-CTF-Web篇</a>
-</div>
-
-    <span><a href="/360-SecLab/CTF-Web/web-02/" title="CTF-Web-02">CTF-Web-02</a></span>
+    <span><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01-Basic-Use-Of-eNSP/" title="eNSP基本命令">eNSP基本命令</a></span>
   </li>
 
       
@@ -443,10 +447,32 @@ Harold's Blog = Harold = Study Notes</title>
 <div class="breadcrumb">
 <a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/360-SecLab/CTF-Web/" title="In 360-CTF-Web篇">360-CTF-Web篇</a>
+<a href="/categories/360-SecLab/CTF-Passwd/" title="In 360-CTF-密码学篇">360-CTF-密码学篇</a>
 </div>
 
-    <span><a href="/360-SecLab/CTF-Web/web-01/" title="CTF-Web-01">CTF-Web-01</a></span>
+    <span><a href="/360-SecLab/CTF-Passwd/passwd-02/" title="CTF-Passwd-02">CTF-Passwd-02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="In 华为认证 eNSP学习笔记">华为认证 eNSP学习笔记</a>
+</div>
+
+    <span><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04-Vlan-Trunk/" title="VLAN虚拟局域网">VLAN虚拟局域网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/" title="In OWASP安全渗透实战">OWASP安全渗透实战</a>
+</div>
+
+    <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/permeable_env/" title="安全渗透环境准备">安全渗透环境准备</a></span>
   </li>
 
       
@@ -455,10 +481,22 @@ Harold's Blog = Harold = Study Notes</title>
 <div class="breadcrumb">
 <a href="/categories/360-SecLab/" title="In 360-SecLab">360-SecLab</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/360-SecLab/CTF-Web/" title="In 360-CTF-Web篇">360-CTF-Web篇</a>
+<a href="/categories/360-SecLab/CTF-Passwd/" title="In 360-CTF-密码学篇">360-CTF-密码学篇</a>
 </div>
 
-    <span><a href="/360-SecLab/CTF-Web/web-03/" title="CTF-Web-03">CTF-Web-03</a></span>
+    <span><a href="/360-SecLab/CTF-Passwd/passwd-01/" title="CTF-Passwd-01">CTF-Passwd-01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/" title="In Kali从入门到入狱">Kali从入门到入狱</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" title="In 渗透工具使用">渗透工具使用</a>
+</div>
+
+    <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/sqlmap/" title="sqlmap工具使用">sqlmap工具使用</a></span>
   </li>
 
       
@@ -477,20 +515,10 @@ Harold's Blog = Harold = Study Notes</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/Java/" title="In Java">Java</a>
-</div>
-
-    <span><a href="/Java/Reflect/" title="反射机制">反射机制</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="In 华为认证 eNSP学习笔记">华为认证 eNSP学习笔记</a>
 </div>
 
-    <span><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01-eNSP%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="eNSP基本命令">eNSP基本命令</a></span>
+    <span><a href="/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81-eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02-DHCP-DNS/" title="DHCP和DNS的配置">DHCP和DNS的配置</a></span>
   </li>
 
       
@@ -502,17 +530,7 @@ Harold's Blog = Harold = Study Notes</title>
 <a href="/categories/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/" title="In OWASP安全渗透实战">OWASP安全渗透实战</a>
 </div>
 
-    <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_inclusion/" title="文件包含漏洞">文件包含漏洞</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/Git/" title="In Git">Git</a>
-</div>
-
-    <span><a href="/Git/Commit-Flow/" title="Git提交流程">Git提交流程</a></span>
+    <span><a href="/Kali%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%8B%B1/OWASP%E5%AE%89%E5%85%A8%E6%B8%97%E9%80%8F%E5%AE%9E%E6%88%98/file_upload/" title="文件上传漏洞">文件上传漏洞</a></span>
   </li>
 
   </ul>
@@ -537,13 +555,13 @@ Harold's Blog = Harold = Study Notes</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">41k words</span>
+    <span title="Symbols count total">51k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">37 mins.</span>
+    <span title="Reading time total">46 mins.</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
